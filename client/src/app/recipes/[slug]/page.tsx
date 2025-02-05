@@ -3,8 +3,8 @@ import { notFound } from "next/navigation"
 
 import { getAllRecipes, getRecipeBySlug } from "@/content/recipes"
 
-import Container from "@/components/container"
-import Header from "@/components/header"
+import { Container } from "@/components/container"
+import { Header } from "@/components/header"
 import { RecipeBody } from "@/components/recipes/recipe-body"
 import { RecipeHeader } from "@/components/recipes/recipe-header"
 
