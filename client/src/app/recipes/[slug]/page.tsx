@@ -21,7 +21,12 @@ export default async function Post(props: Params) {
       <Container>
         <Header />
         <article className="mb-32">
-          <RecipeHeader title={recipe.title} coverImageProps={recipe.coverImageProps} date={recipe.date} />
+          <RecipeHeader
+            slug={recipe.slug}
+            title={recipe.title}
+            coverImageProps={recipe.coverImageProps}
+            date={recipe.date}
+          />
           <RecipeBody content={recipe.content} />
         </article>
       </Container>
