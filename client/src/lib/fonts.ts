@@ -1,24 +1,11 @@
-import { Onest } from "next/font/google"
-import localFont from "next/font/local"
+import { Inter } from "next/font/google"
 
 import { cn } from "@/lib/utils"
 
-export const geistSans = localFont({
-  src: "../styles/fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-})
-
-export const geistMono = localFont({
-  src: "../styles/fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-})
-
-export const onest = Onest({
+export const inter = Inter({
   variable: "--font-onest",
   weight: "variable",
   subsets: ["latin"],
 })
 
-export const fontVariableClassNames = cn(geistSans.variable, geistMono.variable, onest.variable)
+export const fontVariableClassNames = cn(inter.variable)
