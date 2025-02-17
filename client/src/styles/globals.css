@@ -65,16 +65,16 @@ body {
 
   /* custom light-mode colours */
   :root {
-    --brand-green: 155, 28%, 58%;
+    --brand-green: 155 28% 58%;
     --brand-green-foreground: 240 5.9% 10%;
-    --brand-purple: 281, 28%, 58%;
+    --brand-purple: 281 28% 58%;
     --brand-purple-foreground: 240 5.9% 10%;
   }
   /* custom dark-mode colours */
   .dark {
-    --brand-green: 158, 58%, 26%;
+    --brand-green: 158 58% 26%;
     --brand-green-foreground: 0 0% 98%;
-    --brand-purple: 290, 56%, 22%;
+    --brand-purple: 290 56% 22%;
     --brand-purple-foreground: 0 0% 98%;
   }
 }
