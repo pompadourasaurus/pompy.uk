@@ -6,6 +6,7 @@
     "build": "next build",
     "check": "biome check .",
     "check:fix": "biome check --write .",
+    "type-check": "tsc --noEmit",
     "dev": "next dev",
     "start": "next start"
   },
