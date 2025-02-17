@@ -1,4 +1,5 @@
 export type NavItem = {
+  slug: string
   title: string
   href?: string
   disabled?: boolean

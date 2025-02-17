@@ -15,6 +15,7 @@ export type RecipesNavConfig = {
 
 function navItemForRecipe(recipe: Readonly<Recipe>): SidebarNavSubItem {
   return {
+    slug: `recipes/${recipe.slug}`,
     title: recipe.title,
     href: `/recipes/${recipe.slug}`,
   }
@@ -23,6 +24,7 @@ function navItemForRecipe(recipe: Readonly<Recipe>): SidebarNavSubItem {
 function navGroupForRecipeType(recipeTypeSlug: RecipeTypeSlug, recipes: readonly Readonly<Recipe>[]): SidebarNavItem {
   const recipeType = getRecipeTypeBySlug(recipeTypeSlug)
   return {
+    slug: `recipe-types/${recipeType.slug}`,
     title: recipeType.label.plural,
     items: recipes.map(navItemForRecipe),
   }
