@@ -38,8 +38,14 @@ function navGroupsForRecipes(): SidebarNavItem[] {
   return Array.from(navItemsIterator)
 }
 
-export const recipesNavConfig = {
-  mainNav: [],
+export const recipesNavConfig: RecipesNavConfig = {
+  mainNav: [
+    {
+      slug: "recipes",
+      title: "Recipes",
+      href: "/recipes",
+    },
+  ],
   sidebarNav: [
     {
       slug: "home",
@@ -54,4 +60,4 @@ export const recipesNavConfig = {
     },
     ...navGroupsForRecipes(),
   ],
-} as const satisfies RecipesNavConfig
+}
