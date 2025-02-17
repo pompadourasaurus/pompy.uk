@@ -30,3 +30,13 @@ export function getRecipeBySlug(slug: string) {
 export function getAllRecipes(): readonly (typeof recipes)[number][] {
   return recipes.toSorted(compareRecipesByDate)
 }
+
+export function getAllRecipesGroupedByType(): Map<RecipeTypeSlug, readonly Recipe[]> {
+  const groups = Map.groupBy(recipes, (recipe) => recipe.type)
+
+  for (const recipeGroup of groups.values()) {
+    recipeGroup.sort(compareRecipesByDate)
+  }
+
+  return groups
+}
