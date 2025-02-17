@@ -14,7 +14,7 @@ import { siteConfig } from "@/config/site"
 function GitHubLink() {
   return (
     <Button asChild variant="ghost" size="icon" className="h-8 w-8 px-0">
-      <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
+      <Link href={siteConfig.links.github.href} target="_blank" rel="noreferrer">
         <GitHubIcon className="h-4 w-4" />
         <span className="sr-only">GitHub</span>
       </Link>
