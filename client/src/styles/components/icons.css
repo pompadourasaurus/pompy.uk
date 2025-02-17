@@ -1,0 +1,7 @@
+.icon-brand {
+  color: var(--brand-color);
+}
+
+.icon-brand-hover:hover {
+  color: var(--brand-color);
+}
