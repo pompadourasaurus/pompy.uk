@@ -66,6 +66,20 @@ const config: Config = {
             foreground: "hsl(var(--brand-purple-foreground) / <alpha-value>)",
           },
         },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background) / <alpha-value>)",
+          foreground: "hsl(var(--sidebar-foreground) / <alpha-value>)",
+          primary: {
+            DEFAULT: "hsl(var(--sidebar-primary) / <alpha-value>)",
+            foreground: "hsl(var(--sidebar-primary-foreground) / <alpha-value>)",
+          },
+          accent: {
+            DEFAULT: "hsl(var(--sidebar-accent) / <alpha-value>)",
+            foreground: "hsl(var(--sidebar-accent-foreground) / <alpha-value>)",
+          },
+          border: "hsl(var(--sidebar-border) / <alpha-value>)",
+          ring: "hsl(var(--sidebar-ring) / <alpha-value>)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
