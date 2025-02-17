@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next"
 import type * as React from "react"
 
+import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
+import { recipesNavConfig } from "@/config/recipes-nav"
 import { siteConfig } from "@/config/site"
 import { fontVariableClassNames, inter } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
@@ -52,7 +54,10 @@ export default function RootLayout({
     <html lang="en-GB" suppressHydrationWarning>
       <body className={cn(fontVariableClassNames, inter.className, "antialiased")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
+          <div className="flex flex-1 flex-col">
+            <SiteHeader navConfig={recipesNavConfig} />
+            <main className="flex flex-1 flex-col">{children}</main>
+          </div>
         </ThemeProvider>
       </body>
     </html>
