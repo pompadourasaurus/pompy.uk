@@ -1,8 +1,9 @@
 import type { Recipe } from "@/lib/types/recipe"
 
-export const myFirstRecipe: Recipe = {
+export const myFirstRecipe = {
   slug: "my-first-recipe",
   title: "My First Recipe",
+  type: "cake",
   excerpt: "this recipe is really cool!",
   date: new Date("2025-01-01"),
   coverImageProps: {
@@ -37,4 +38,4 @@ export const myFirstRecipe: Recipe = {
       </section>
     </>
   ),
-}
+} as const satisfies Recipe

@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { getAllRecipes, getRecipeBySlug } from "@/content/recipes"
+import { getAllRecipes, getRecipeBySlug } from "@/lib/recipes"
 
 import { Container } from "@/components/container"
 import { Header } from "@/components/header"

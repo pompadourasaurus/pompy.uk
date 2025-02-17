@@ -2,7 +2,7 @@ import { Container } from "@/components/container"
 import { Intro } from "@/components/intro"
 import { HeroRecipe } from "@/components/recipes/hero-recipe"
 import { MoreRecipes } from "@/components/recipes/more-recipes"
-import { getAllRecipes } from "@/content/recipes"
+import { getAllRecipes } from "@/lib/recipes"
 
 export default function Index() {
   const allRecipes = getAllRecipes()
