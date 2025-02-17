@@ -1,6 +1,16 @@
 import type { NextConfig } from "next"
 
-const nextConfig: NextConfig = {}
+const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/recipes",
+        permanent: false,
+      },
+    ]
+  },
+}
 
 class ConfigBuilder {
   config: NextConfig
