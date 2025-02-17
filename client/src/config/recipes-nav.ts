@@ -8,10 +8,10 @@ export type MainNavItem = NavItem & {}
 export type SidebarNavSubItem = NavItem & {}
 export type SidebarNavItem = NavItemWithChildren<SidebarNavSubItem> & {}
 
-export type RecipesNavConfig = {
-  mainNav: MainNavItem[]
-  sidebarNav: SidebarNavItem[]
-}
+export type RecipesNavConfig = Readonly<{
+  mainNav: readonly MainNavItem[]
+  sidebarNav: readonly SidebarNavItem[]
+}>
 
 function navItemForRecipe(recipe: Readonly<Recipe>): SidebarNavSubItem {
   return {
