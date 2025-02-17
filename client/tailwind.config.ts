@@ -14,6 +14,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // shadcn/ui colours
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",
         card: {
@@ -53,6 +54,17 @@ const config: Config = {
           "3": "hsl(var(--chart-3) / <alpha-value>)",
           "4": "hsl(var(--chart-4) / <alpha-value>)",
           "5": "hsl(var(--chart-5) / <alpha-value>)",
+        },
+        // custom colours
+        brand: {
+          green: {
+            DEFAULT: "hsl(var(--brand-green) / <alpha-value>)",
+            foreground: "hsl(var(--brand-green-foreground) / <alpha-value>)",
+          },
+          purple: {
+            DEFAULT: "hsl(var(--brand-purple) / <alpha-value>)",
+            foreground: "hsl(var(--brand-purple-foreground) / <alpha-value>)",
+          },
         },
       },
       borderRadius: {
