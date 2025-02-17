@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next"
 import type * as React from "react"
 
+import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
+import { recipesNavConfig } from "@/config/recipes-nav"
 import { siteConfig } from "@/config/site"
-import { fontVariableClassNames } from "@/lib/fonts"
+import { fontVariableClassNames, inter } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 
 import "@/styles/globals.css"
@@ -50,9 +52,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-GB" suppressHydrationWarning>
-      <body className={cn(fontVariableClassNames, "antialiased")}>
+      <body className={cn(fontVariableClassNames, inter.className, "antialiased")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
+          <div className="flex flex-1 flex-col">
+            <SiteHeader navConfig={recipesNavConfig} />
+            <main className="flex flex-1 flex-col">{children}</main>
+          </div>
         </ThemeProvider>
       </body>
     </html>

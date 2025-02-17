@@ -52,5 +52,5 @@ export function ServerError({ statusCode, message, className, ...props }: Server
 }
 
 export function ServerErrorPage({ className, ...props }: ServerErrorProps) {
-  return <ServerError className={cn(className, "min-h-[100vh] m-auto mx-5")} {...props} />
+  return <ServerError className={cn(className, "h-[calc(100vh-3.5rem)] m-auto mx-5")} {...props} />
 }

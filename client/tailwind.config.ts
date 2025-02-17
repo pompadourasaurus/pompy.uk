@@ -14,6 +14,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // shadcn/ui colours
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",
         card: {
@@ -53,6 +54,31 @@ const config: Config = {
           "3": "hsl(var(--chart-3) / <alpha-value>)",
           "4": "hsl(var(--chart-4) / <alpha-value>)",
           "5": "hsl(var(--chart-5) / <alpha-value>)",
+        },
+        // custom colours
+        brand: {
+          green: {
+            DEFAULT: "hsl(var(--brand-green) / <alpha-value>)",
+            foreground: "hsl(var(--brand-green-foreground) / <alpha-value>)",
+          },
+          purple: {
+            DEFAULT: "hsl(var(--brand-purple) / <alpha-value>)",
+            foreground: "hsl(var(--brand-purple-foreground) / <alpha-value>)",
+          },
+        },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background) / <alpha-value>)",
+          foreground: "hsl(var(--sidebar-foreground) / <alpha-value>)",
+          primary: {
+            DEFAULT: "hsl(var(--sidebar-primary) / <alpha-value>)",
+            foreground: "hsl(var(--sidebar-primary-foreground) / <alpha-value>)",
+          },
+          accent: {
+            DEFAULT: "hsl(var(--sidebar-accent) / <alpha-value>)",
+            foreground: "hsl(var(--sidebar-accent-foreground) / <alpha-value>)",
+          },
+          border: "hsl(var(--sidebar-border) / <alpha-value>)",
+          ring: "hsl(var(--sidebar-ring) / <alpha-value>)",
         },
       },
       borderRadius: {
