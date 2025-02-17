@@ -38,12 +38,12 @@ export function getRecipeTypeSlugs(): RecipeTypeSlug[] {
   return Array.from(recipeTypesMap.keys()) as RecipeTypeSlug[]
 }
 
-export function getRecipeTypeBySlug(slug: RecipeTypeSlug): RecipeType
-export function getRecipeTypeBySlug(slug: string): RecipeType | undefined
+export function getRecipeTypeBySlug(slug: RecipeTypeSlug): Readonly<RecipeType>
+export function getRecipeTypeBySlug(slug: string): Readonly<RecipeType> | undefined
 export function getRecipeTypeBySlug(slug: string) {
   return recipeTypesMap.get(slug)
 }
 
-export function getAllRecipeTypes(): readonly (typeof recipeTypes)[number][] {
+export function getAllRecipeTypes(): readonly Readonly<(typeof recipeTypes)[number]>[] {
   return Array.from(recipeTypes)
 }
