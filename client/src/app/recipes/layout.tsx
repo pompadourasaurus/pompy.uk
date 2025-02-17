@@ -1,6 +1,6 @@
 import type * as React from "react"
 
-import { RecipesNav } from "@/components/recipes-nav"
+import { RecipesNav } from "@/components/recipes/recipes-nav"
 import { recipesNavConfig } from "@/config/recipes-nav"
 import { cn } from "@/lib/utils"
 
