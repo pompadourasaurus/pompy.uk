@@ -1,9 +1,11 @@
 import { myFirstRecipe } from "@/content/recipes/my-first-recipe"
+import { mySecondRecipe } from "@/content/recipes/my-second-recipe"
+import { myThirdRecipe } from "@/content/recipes/my-third-recipe"
 
 import type { RecipeTypeSlug } from "@/lib/recipes/recipe-types"
 import type { Recipe } from "@/lib/types/recipe"
 
-const recipes = [myFirstRecipe] as const satisfies Recipe[]
+const recipes = [myFirstRecipe, mySecondRecipe, myThirdRecipe] as const satisfies Recipe[]
 
 export type RecipeSlug = (typeof recipes)[number]["slug"]
 
