@@ -3,7 +3,17 @@ import { type RecipeTypeSlug, getRecipeTypeBySlug } from "@/lib/recipes/recipe-t
 import type { NavItem, NavItemWithChildren } from "@/lib/types/nav"
 import type { Recipe } from "@/lib/types/recipe"
 
-export type MainNavItem = NavItem & {}
+import type { NavMatcherSlug } from "./nav-matchers"
+
+export type MainNavItem = NavItem &
+  Readonly<{
+    /**
+     * refers to a predicate that should return True when the active
+     * pathname 'matches' the nav item
+     * @see getNavMatcherBySlug
+     */
+    matcherSlug: NavMatcherSlug
+  }>
 
 export type SidebarNavSubItem = NavItem & {}
 export type SidebarNavItem = NavItemWithChildren<SidebarNavSubItem> & {}
@@ -44,6 +54,7 @@ export const recipesNavConfig: RecipesNavConfig = {
       slug: "recipes",
       title: "Recipes",
       href: "/recipes",
+      matcherSlug: "default",
     },
   ],
   sidebarNav: [
