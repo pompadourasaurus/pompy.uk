@@ -6,7 +6,7 @@ import * as React from "react"
 
 import { LinkTree, type LinkTreeRootSpec } from "@/components/link-tree"
 
-type TableOfContentsProps = {
+export type TableOfContentsProps = {
   toc: LinkTreeRootSpec
 }
 
