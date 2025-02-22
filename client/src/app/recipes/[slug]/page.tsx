@@ -3,7 +3,6 @@ import { notFound } from "next/navigation"
 
 import { getAllRecipes, getRecipeBySlug } from "@/lib/recipes"
 
-import { Container } from "@/components/container"
 import { Header } from "@/components/header"
 import { RecipeBody } from "@/components/recipes/recipe-body"
 import { RecipeHeader } from "@/components/recipes/recipe-header"
@@ -18,7 +17,7 @@ export default async function RecipePage(props: Params) {
 
   return (
     <main>
-      <Container>
+      <div className="container">
         <Header />
         <article className="mb-32">
           <RecipeHeader
@@ -29,7 +28,7 @@ export default async function RecipePage(props: Params) {
           />
           <RecipeBody content={recipe.content} />
         </article>
-      </Container>
+      </div>
     </main>
   )
 }
