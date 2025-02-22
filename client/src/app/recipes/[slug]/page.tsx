@@ -4,8 +4,10 @@ import { notFound } from "next/navigation"
 import { getAllRecipes, getRecipeBySlug } from "@/lib/recipes"
 
 import { Header } from "@/components/header"
+import type { LinkTreeRootSpec } from "@/components/link-tree"
 import { RecipeBody } from "@/components/recipes/recipe-body"
 import { RecipeHeader } from "@/components/recipes/recipe-header"
+import { TableOfContents } from "@/components/table-of-contents"
 
 export default async function RecipePage(props: Params) {
   const params = await props.params
@@ -15,9 +17,18 @@ export default async function RecipePage(props: Params) {
     return notFound()
   }
 
+  const toc: LinkTreeRootSpec = {
+    children: [
+      {
+        title: "foobar",
+        href: "#baz",
+      },
+    ],
+  }
+
   return (
-    <main>
-      <div className="container">
+    <div className="lg:gap-10 xl:grid xl:grid-cols-[1fr_150px]">
+      <main className="container py-6 lg:py-8">
         <Header />
         <article className="mb-32">
           <RecipeHeader
@@ -28,8 +39,14 @@ export default async function RecipePage(props: Params) {
           />
           <RecipeBody content={recipe.content} />
         </article>
-      </div>
-    </main>
+      </main>
+
+      <aside className="top-14 hidden text-sm h-[calc(100vh-3.5rem)] w-full shrink-0 xl:sticky xl:block">
+        <div className="no-scrollbar h-full overflow-auto py-10">
+          <TableOfContents toc={toc} />
+        </div>
+      </aside>
+    </div>
   )
 }
 
