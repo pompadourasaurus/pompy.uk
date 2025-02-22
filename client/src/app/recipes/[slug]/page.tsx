@@ -9,7 +9,13 @@ import { RecipeBody } from "@/components/recipes/recipe-body"
 import { RecipeHeader } from "@/components/recipes/recipe-header"
 import { TableOfContents } from "@/components/table-of-contents"
 
-export default async function RecipePage(props: Params) {
+type RecipePageProps = {
+  params: Promise<{
+    slug: string
+  }>
+}
+
+export default async function RecipePage(props: RecipePageProps) {
   const params = await props.params
   const recipe = getRecipeBySlug(params.slug)
 
@@ -50,13 +56,7 @@ export default async function RecipePage(props: Params) {
   )
 }
 
-type Params = {
-  params: Promise<{
-    slug: string
-  }>
-}
-
-export async function generateMetadata(props: Params): Promise<Metadata> {
+export async function generateMetadata(props: RecipePageProps): Promise<Metadata> {
   const params = await props.params
   const post = getRecipeBySlug(params.slug)
 
