@@ -16,14 +16,14 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
   const itemIds = React.useMemo(() => {
     if (toc.children == null) return []
     return toc.children
-      .flatMap((item) => [item.href, item?.children?.map((item) => item.href)])
+      .flatMap((item) => [item.href, item.children?.map((item) => item.href)])
       .flat()
       .filter(filterIds)
       .map((id) => id.slice(id.lastIndexOf("#")))
   }, [toc])
   const activeHeading = useActiveItem(itemIds)
 
-  if (!toc?.children?.length) {
+  if (!toc.children?.length) {
     return null
   }
 
@@ -42,9 +42,8 @@ function useActiveItem(itemIds: string[]) {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id)
-          }
+          if (!entry.isIntersecting) continue
+          setActiveId(entry.target.id)
         }
       },
       // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#rootmargin
@@ -54,17 +53,15 @@ function useActiveItem(itemIds: string[]) {
 
     for (const id of itemIds) {
       const element = document.getElementById(id)
-      if (element) {
-        observer.observe(element)
-      }
+      if (!element) continue
+      observer.observe(element)
     }
 
     return () => {
       for (const id of itemIds) {
         const element = document.getElementById(id)
-        if (element) {
-          observer.unobserve(element)
-        }
+        if (!element) continue
+        observer.unobserve(element)
       }
     }
   }, [itemIds])
