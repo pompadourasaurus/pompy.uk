@@ -44,51 +44,52 @@ export function LinkTree({ rootSpec, activeItemHref }: LinkTreeProps) {
 
   return (
     <LinkTreeContext.Provider value={{ activeItemHref }}>
-      <InnerLinkTree rootSpec={rootSpec} />
+      <InnerLinkTree nodeSpec={rootSpec} />
     </LinkTreeContext.Provider>
   )
 }
 //endregion
 
-//region InnerLinkTree
-type InnerLinkTreeProps = {
-  rootSpec: LinkTreeRootSpec
+//region LinkNodeDescendants
+type LinkNodeDescendantsProps = {
+  nodeSpec: LinkTreeRootSpec
+  level?: number
 }
 
-const InnerLinkTree = React.memo(({ rootSpec }: InnerLinkTreeProps) => {
-  if (rootSpec.children == null) return null
-  if (rootSpec.children.length === 0) return null
+function LinkNodeDescendants({ nodeSpec, level = 1 }: LinkNodeDescendantsProps) {
+  if (nodeSpec.children == null) return null
+  if (nodeSpec.children.length === 0) return null
 
   return (
-    <ul className="m-0 list-none">
-      {rootSpec.children.map((item) => (
-        <LinkSubtree key={item.href} rootSpec={item} />
+    <ul className={cn("m-0 list-none", { "pl-4": level > 1 })}>
+      {nodeSpec.children.map((childSpec) => (
+        <LinkSubtree key={childSpec.href} rootSpec={childSpec} level={level} />
       ))}
     </ul>
   )
-})
+}
+//endregion
+
+//region InnerLinkTree
+const InnerLinkTree = React.memo(LinkNodeDescendants)
 InnerLinkTree.displayName = "InnerLinkTree"
 //endregion
 
 //region LinkSubtree
 type LinkSubtreeProps = {
   rootSpec: LinkTreeNodeSpec
-  level?: number
+  level: number
 }
 
-function LinkSubtree({ rootSpec, level = 1 }: LinkSubtreeProps) {
-  if (rootSpec.children == null) return null
-  if (rootSpec.children.length === 0) return null
-  if (level >= 3) return null
+function LinkSubtree({ rootSpec, level }: LinkSubtreeProps) {
+  if (level >= 3) return null // maximum rendered 'depth' is 2
 
-  return rootSpec.children.map((item) => (
-    <li key={item.href} className="mt-0 pt-2">
+  return (
+    <li className="mt-0 pt-2">
       <LinkTreeNode nodeSpec={rootSpec} />
-      <ul className="m-0 list-none pl-4">
-        <LinkSubtree rootSpec={item} level={level + 1} />
-      </ul>
+      <LinkNodeDescendants nodeSpec={rootSpec} level={level + 1} />
     </li>
-  ))
+  )
 }
 //endregion
 
