@@ -8,7 +8,7 @@ import { Header } from "@/components/header"
 import { RecipeBody } from "@/components/recipes/recipe-body"
 import { RecipeHeader } from "@/components/recipes/recipe-header"
 
-export default async function Post(props: Params) {
+export default async function RecipePage(props: Params) {
   const params = await props.params
   const recipe = getRecipeBySlug(params.slug)
 
