@@ -47,12 +47,18 @@ export default async function RecipePage(props: RecipePageProps) {
         </article>
       </main>
 
-      <aside className="top-14 hidden text-sm h-[calc(100vh-3.5rem)] w-full shrink-0 xl:sticky xl:block">
-        <div className="no-scrollbar h-full overflow-auto py-10">
-          <TableOfContents toc={toc} />
-        </div>
-      </aside>
+      <RecipePageAside>
+        <TableOfContents toc={toc} />
+      </RecipePageAside>
     </div>
+  )
+}
+
+function RecipePageAside({ children }: { children?: React.ReactNode }) {
+  return (
+    <aside className="top-14 hidden text-sm h-[calc(100vh-3.5rem)] w-full shrink-0 xl:sticky xl:block">
+      <div className="no-scrollbar h-full overflow-auto py-10">{children}</div>
+    </aside>
   )
 }
 
