@@ -1,13 +1,14 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
+import type * as React from "react"
 
 import { getAllRecipes, getRecipeBySlug } from "@/lib/recipes"
 
+import { ContextualTableOfContents, TableOfContentsContextProvider } from "@/components/contextual-table-of-contents"
 import { Header } from "@/components/header"
 import type { LinkTreeRootSpec } from "@/components/link-tree"
-import { RecipeBody } from "@/components/recipes/recipe-body"
+import { RecipeBodyWrapper } from "@/components/recipes/recipe-body-wrapper"
 import { RecipeHeader } from "@/components/recipes/recipe-header"
-import { TableOfContents } from "@/components/table-of-contents"
 
 type RecipePageProps = {
   params: Promise<{
@@ -23,6 +24,8 @@ export default async function RecipePage(props: RecipePageProps) {
     return notFound()
   }
 
+  const RecipeContent = recipe.content
+
   const toc: LinkTreeRootSpec = {
     children: [
       {
@@ -33,24 +36,28 @@ export default async function RecipePage(props: RecipePageProps) {
   }
 
   return (
-    <div className="lg:gap-10 xl:grid xl:grid-cols-[1fr_150px]">
-      <main className="container py-6 lg:py-8">
-        <Header />
-        <article className="mb-32">
-          <RecipeHeader
-            slug={recipe.slug}
-            title={recipe.title}
-            coverImageProps={recipe.coverImageProps}
-            date={recipe.date}
-          />
-          <RecipeBody content={recipe.content} />
-        </article>
-      </main>
+    <TableOfContentsContextProvider>
+      <div className="lg:gap-10 xl:grid xl:grid-cols-[1fr_150px]">
+        <main className="container py-6 lg:py-8">
+          <Header />
+          <article className="mb-32">
+            <RecipeHeader
+              slug={recipe.slug}
+              title={recipe.title}
+              coverImageProps={recipe.coverImageProps}
+              date={recipe.date}
+            />
+            <RecipeBodyWrapper>
+              <RecipeContent />
+            </RecipeBodyWrapper>
+          </article>
+        </main>
 
-      <RecipePageAside>
-        <TableOfContents toc={toc} />
-      </RecipePageAside>
-    </div>
+        <RecipePageAside>
+          <ContextualTableOfContents />
+        </RecipePageAside>
+      </div>
+    </TableOfContentsContextProvider>
   )
 }
 

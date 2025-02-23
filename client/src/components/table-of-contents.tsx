@@ -7,30 +7,30 @@ import * as React from "react"
 import { LinkTree, type LinkTreeRootSpec } from "@/components/link-tree"
 
 export type TableOfContentsProps = {
-  toc: LinkTreeRootSpec
+  rootSpec: LinkTreeRootSpec
 }
 
 const filterIds = Boolean<string> as (id?: string | undefined) => id is string
 
-export function TableOfContents({ toc }: TableOfContentsProps) {
+export function TableOfContents({ rootSpec }: TableOfContentsProps) {
   const itemIds = React.useMemo(() => {
-    if (toc.children == null) return []
-    return toc.children
+    if (rootSpec.children == null) return []
+    return rootSpec.children
       .flatMap((item) => [item.href, item.children?.map((item) => item.href)])
       .flat()
       .filter(filterIds)
-      .map((id) => id.slice(id.lastIndexOf("#")))
-  }, [toc])
+      .map((href) => href.slice(href.lastIndexOf("#")))
+  }, [rootSpec])
   const activeHeading = useActiveItem(itemIds)
 
-  if (!toc.children?.length) {
+  if (!rootSpec.children?.length) {
     return null
   }
 
   return (
     <div className="space-y-2">
       <p className="font-medium">On This Page</p>
-      <LinkTree rootSpec={toc} activeItemHref={activeHeading} />
+      <LinkTree rootSpec={rootSpec} activeItemHref={activeHeading} />
     </div>
   )
 }

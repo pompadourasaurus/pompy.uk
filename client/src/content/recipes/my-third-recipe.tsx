@@ -15,12 +15,12 @@ export const myThirdRecipe = {
   openGraphImageUrl: "/assets/recipes/cake.png",
   content: () => (
     <>
-      <section>
+      <section id="preamble">
         <h2>Preamble</h2>
         This recipe is really cool!
       </section>
 
-      <section>
+      <section id="ingredients">
         <h2>Ingredients</h2>
         <ul>
           <li>a smattering of flour</li>
@@ -29,12 +29,20 @@ export const myThirdRecipe = {
         </ul>
       </section>
 
-      <section>
+      <section id="method">
         <h2>Method</h2>
         <ol>
           <li>eat the sugar</li>
           <li>drink the milk</li>
         </ol>
+
+        <section id="subsection">
+          <h3>Subsection</h3>
+          <ol>
+            <li>foobar</li>
+            <li>barbaz</li>
+          </ol>
+        </section>
       </section>
     </>
   ),
