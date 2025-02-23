@@ -1,11 +1,14 @@
+import * as React from "react"
+
 import type { Recipe } from "@/lib/types/recipe"
 
-type Props = Pick<Recipe, "content">
+type RecipeBodyProps = Pick<Recipe, "content">
 
-export function RecipeBody({ content: Content }: Props) {
+export const RecipeBody = React.forwardRef<HTMLDivElement, RecipeBodyProps>(({ content: Content }, ref) => {
   return (
-    <div className="max-w-2xl mx-auto text-lg space-y-6">
+    <div ref={ref} className="max-w-2xl mx-auto text-lg space-y-6">
       <Content />
     </div>
   )
-}
+})
+RecipeBody.displayName = "RecipeBody"
