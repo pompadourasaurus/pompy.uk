@@ -16,12 +16,12 @@ export const myFirstRecipe = {
   content: () => (
     <>
       <section>
-        <h1>Preamble</h1>
+        <h2>Preamble</h2>
         This recipe is really cool!
       </section>
 
       <section>
-        <h1>Ingredients</h1>
+        <h2>Ingredients</h2>
         <ul>
           <li>a smattering of flour</li>
           <li>1 metric tonne of sugar</li>
@@ -30,7 +30,7 @@ export const myFirstRecipe = {
       </section>
 
       <section>
-        <h1>Method</h1>
+        <h2>Method</h2>
         <ol>
           <li>eat the sugar</li>
           <li>drink the milk</li>

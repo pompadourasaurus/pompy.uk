@@ -1,4 +1,3 @@
-import { Container } from "@/components/container"
 import { Intro } from "@/components/intro"
 import { HeroRecipe } from "@/components/recipes/hero-recipe"
 import { MoreRecipes } from "@/components/recipes/more-recipes"
@@ -12,11 +11,11 @@ export default function Index() {
 
   return (
     <main>
-      <Container>
+      <div className="container">
         <Intro />
         <HeroRecipe {...mostRecentRecipe} />
         {remainingRecipes.length > 0 && <MoreRecipes recipes={remainingRecipes} />}
-      </Container>
+      </div>
     </main>
   )
 }
