@@ -1,12 +1,14 @@
+import { globContent } from "@/lib/glob-content"
 import type { RecipeTypeSlug } from "@/lib/recipes/recipe-types"
 import type { Recipe, RecipeSlug } from "@/lib/types/recipe"
 
-const recipeModules = (await Promise.all([
-  import("@/content/recipes/my-first-recipe"),
-  import("@/content/recipes/my-second-recipe"),
-  import("@/content/recipes/my-third-recipe"),
-])) satisfies { default: Recipe }[]
+const recipeModuleNames = await globContent("recipes")
 
+// why this dynamic import works:
+// https://webpack.js.org/api/module-methods/#dynamic-expressions-in-import
+const recipeModules: { default: Recipe }[] = await Promise.all(
+  recipeModuleNames.map((name) => import(`@/content/recipes/${name}`)),
+)
 const recipes = recipeModules.map((module) => module.default)
 const recipesMap = new Map<string, Recipe>(recipes.map((recipe) => [recipe.slug, recipe]))
 
