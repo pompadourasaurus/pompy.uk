@@ -1,13 +1,11 @@
-import { myFirstRecipe } from "@/content/recipes/my-first-recipe"
-import { mySecondRecipe } from "@/content/recipes/my-second-recipe"
-import { myThirdRecipe } from "@/content/recipes/my-third-recipe"
+import myFirstRecipe from "@/content/recipes/my-first-recipe"
+import mySecondRecipe from "@/content/recipes/my-second-recipe"
+import myThirdRecipe from "@/content/recipes/my-third-recipe"
 
 import type { RecipeTypeSlug } from "@/lib/recipes/recipe-types"
-import type { Recipe } from "@/lib/types/recipe"
+import type { Recipe, RecipeSlug } from "@/lib/types/recipe"
 
-const recipes = [myFirstRecipe, mySecondRecipe, myThirdRecipe] as const satisfies Recipe[]
-
-export type RecipeSlug = (typeof recipes)[number]["slug"]
+const recipes = [myFirstRecipe, mySecondRecipe, myThirdRecipe] satisfies Recipe[]
 
 const recipesMap = new Map<string, Recipe>(recipes.map((recipe) => [recipe.slug, recipe]))
 
@@ -19,13 +17,13 @@ function compareRecipesByDate(first: Readonly<Recipe>, second: Readonly<Recipe>)
   return +second.date - +first.date
 }
 
-export function getRecipeSlugs(): Readonly<RecipeSlug>[] {
+export function getRecipeSlugs(): RecipeSlug[] {
   return Array.from(recipesMap.keys()) as RecipeSlug[]
 }
 
-export function getRecipeBySlug(slug: Readonly<RecipeSlug>): Recipe
+export function getRecipeBySlug(slug: RecipeSlug): Recipe
 export function getRecipeBySlug(slug: string): Recipe | undefined
-export function getRecipeBySlug(slug: string) {
+export function getRecipeBySlug(slug: string): Recipe | undefined {
   return recipesMap.get(slug)
 }
 
