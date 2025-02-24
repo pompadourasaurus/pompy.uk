@@ -1,12 +1,13 @@
-import bananaBreadTraybake from "@/content/recipes/banana-bread-traybake"
-import brownies from "@/content/recipes/brownies"
-import whiteChocolateAndRaspberryCookies from "@/content/recipes/white-chocolate-and-raspberry-cookies"
-
 import type { RecipeTypeSlug } from "@/lib/recipes/recipe-types"
 import type { Recipe, RecipeSlug } from "@/lib/types/recipe"
 
-const recipes = [whiteChocolateAndRaspberryCookies, bananaBreadTraybake, brownies] satisfies Recipe[]
+const recipeModules = (await Promise.all([
+  import("@/content/recipes/my-first-recipe"),
+  import("@/content/recipes/my-second-recipe"),
+  import("@/content/recipes/my-third-recipe"),
+])) satisfies { default: Recipe }[]
 
+const recipes = recipeModules.map((module) => module.default)
 const recipesMap = new Map<string, Recipe>(recipes.map((recipe) => [recipe.slug, recipe]))
 
 /**
