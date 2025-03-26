@@ -10,8 +10,8 @@ export type SpecificQuantity = {
 
 export type QuantityRange = {
   quantityType: "range"
-  from: number | Fraction
-  to: number | Fraction
+  fromAmount: number | Fraction
+  toAmount: number | Fraction
   unit: UnitSlug
 }
 
@@ -23,8 +23,8 @@ export type SpecialSpecificQuantity = {
 
 export type SpecialQuantityRange = {
   quantityType: "special-range"
-  from: number | Fraction
-  to: number | Fraction
+  fromAmount: number | Fraction
+  toAmount: number | Fraction
   label: string
 }
 
