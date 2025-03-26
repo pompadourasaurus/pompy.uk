@@ -15,10 +15,10 @@ const recipeTypes = [
     },
   },
   {
-    slug: "tray-bake",
+    slug: "bake",
     label: {
-      singular: "Traybake",
-      plural: "Traybakes",
+      singular: "Bake",
+      plural: "Bakes",
     },
   },
   {
