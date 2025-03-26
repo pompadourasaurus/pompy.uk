@@ -6,8 +6,8 @@ import { getAllRecipes, getRecipeBySlug } from "@/lib/recipes"
 
 import { ContextualTableOfContents, TableOfContentsContextProvider } from "@/components/contextual-table-of-contents"
 import { Header } from "@/components/header"
-import type { LinkTreeRootSpec } from "@/components/link-tree"
 import { RecipeBodyWrapper } from "@/components/recipes/recipe-body-wrapper"
+import { RecipeContextProvider } from "@/components/recipes/recipe-context"
 import { RecipeHeader } from "@/components/recipes/recipe-header"
 
 type RecipePageProps = {
@@ -24,16 +24,7 @@ export default async function RecipePage(props: RecipePageProps) {
     return notFound()
   }
 
-  const RecipeContent = recipe.content
-
-  const toc: LinkTreeRootSpec = {
-    children: [
-      {
-        title: "foobar",
-        href: "#baz",
-      },
-    ],
-  }
+  const { content: RecipeContent, ...recipeMeta } = recipe
 
   return (
     <TableOfContentsContextProvider>
@@ -48,7 +39,9 @@ export default async function RecipePage(props: RecipePageProps) {
               date={recipe.date}
             />
             <RecipeBodyWrapper>
-              <RecipeContent />
+              <RecipeContextProvider recipe={recipeMeta}>
+                <RecipeContent />
+              </RecipeContextProvider>
             </RecipeBodyWrapper>
           </article>
         </main>
