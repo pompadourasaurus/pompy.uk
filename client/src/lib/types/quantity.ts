@@ -1,6 +1,5 @@
-import type { Fraction } from "fraction.js"
-
 import type { UnitSlug } from "@/lib/quantities/units"
+import type { Fraction } from "@/lib/types/fraction"
 
 export type SpecificQuantity = {
   quantityType?: "specific" | null | undefined
