@@ -13,6 +13,7 @@ export default defineRecipe({
     alt: "photograph of a Bundt cake",
   },
   openGraphImageUrl: "/assets/recipes/cake.png",
+  ingredients: [],
   content: () => (
     <>
       <section id="preamble">
