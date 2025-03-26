@@ -1,14 +1,15 @@
-import { myFirstRecipe } from "@/content/recipes/my-first-recipe"
-import { mySecondRecipe } from "@/content/recipes/my-second-recipe"
-import { myThirdRecipe } from "@/content/recipes/my-third-recipe"
-
+import { globContent } from "@/lib/glob-content"
 import type { RecipeTypeSlug } from "@/lib/recipes/recipe-types"
-import type { Recipe } from "@/lib/types/recipe"
+import type { Recipe, RecipeSlug } from "@/lib/types/recipe"
 
-const recipes = [myFirstRecipe, mySecondRecipe, myThirdRecipe] as const satisfies Recipe[]
+const recipeModuleNames = await globContent("recipes")
 
-export type RecipeSlug = (typeof recipes)[number]["slug"]
-
+// why this dynamic import works:
+// https://webpack.js.org/api/module-methods/#dynamic-expressions-in-import
+const recipeModules: { default: Recipe }[] = await Promise.all(
+  recipeModuleNames.map((name) => import(`@/content/recipes/${name}`)),
+)
+const recipes = recipeModules.map((module) => module.default)
 const recipesMap = new Map<string, Recipe>(recipes.map((recipe) => [recipe.slug, recipe]))
 
 /**
@@ -19,13 +20,13 @@ function compareRecipesByDate(first: Readonly<Recipe>, second: Readonly<Recipe>)
   return +second.date - +first.date
 }
 
-export function getRecipeSlugs(): Readonly<RecipeSlug>[] {
+export function getRecipeSlugs(): RecipeSlug[] {
   return Array.from(recipesMap.keys()) as RecipeSlug[]
 }
 
-export function getRecipeBySlug(slug: Readonly<RecipeSlug>): Recipe
+export function getRecipeBySlug(slug: RecipeSlug): Recipe
 export function getRecipeBySlug(slug: string): Recipe | undefined
-export function getRecipeBySlug(slug: string) {
+export function getRecipeBySlug(slug: string): Recipe | undefined {
   return recipesMap.get(slug)
 }
 

@@ -1,6 +1,6 @@
-import type { Recipe } from "@/lib/types/recipe"
+import { defineRecipe } from "@/lib/recipes/define-recipe"
 
-export const mySecondRecipe = {
+export default defineRecipe({
   slug: "my-second-recipe",
   title: "My Second Recipe",
   type: "meal",
@@ -38,4 +38,4 @@ export const mySecondRecipe = {
       </section>
     </>
   ),
-} as const satisfies Recipe
+})
