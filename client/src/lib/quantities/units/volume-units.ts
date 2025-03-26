@@ -1,6 +1,6 @@
 // see: https://en.wikipedia.org/wiki/Cooking_weights_and_measures
 
-import type { Unit } from "@/lib/types/unit"
+import type { UnitInput } from "@/lib/types/unit"
 
 // region English volume units
 /**
@@ -34,7 +34,7 @@ const englishVolumes = [
       symbol: "tbsp.",
     },
   },
-] as const satisfies Unit[]
+] as const satisfies UnitInput[]
 // endregion
 
 // region Imperial volume units
@@ -78,7 +78,7 @@ const imperialVolumes = [
       symbol: "gal.",
     },
   },
-] as const satisfies Unit[]
+] as const satisfies UnitInput[]
 // endregion
 
 // region US Customary volume units
@@ -103,7 +103,7 @@ const customaryVolumes = [
       symbol: "C",
     },
   },
-] as const satisfies Unit[]
+] as const satisfies UnitInput[]
 // endregion
 
 // region Metric volume units
@@ -135,7 +135,12 @@ const metricVolumes = [
       symbol: "L",
     },
   },
-] as const satisfies Unit[]
+] as const satisfies UnitInput[]
 // endregion
 
-export default [...englishVolumes, ...imperialVolumes, ...customaryVolumes, ...metricVolumes] as const satisfies Unit[]
+export default [
+  ...englishVolumes,
+  ...imperialVolumes,
+  ...customaryVolumes,
+  ...metricVolumes,
+] as const satisfies UnitInput[]

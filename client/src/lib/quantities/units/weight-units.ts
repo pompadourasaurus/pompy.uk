@@ -1,4 +1,4 @@
-import type { Unit } from "@/lib/types/unit"
+import type { UnitInput } from "@/lib/types/unit"
 
 // region US Customary weight units
 /**
@@ -23,7 +23,7 @@ const customaryWeights = [
       symbol: "Ib.",
     },
   },
-] as const satisfies Unit[]
+] as const satisfies UnitInput[]
 // endregion
 
 // region Metric units
@@ -46,7 +46,7 @@ const metricWeights = [
       symbol: "kg",
     },
   },
-] as const satisfies Unit[]
+] as const satisfies UnitInput[]
 // endregion
 
-export default [...customaryWeights, ...metricWeights] as const satisfies Unit[]
+export default [...customaryWeights, ...metricWeights] as const satisfies UnitInput[]

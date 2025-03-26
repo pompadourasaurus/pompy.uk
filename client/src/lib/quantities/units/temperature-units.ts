@@ -1,4 +1,4 @@
-import type { Unit } from "@/lib/types/unit"
+import type { UnitInput } from "@/lib/types/unit"
 
 export default [
   {
@@ -28,4 +28,4 @@ export default [
       symbol: "°F",
     },
   },
-] as const satisfies Unit[]
+] as const satisfies UnitInput[]

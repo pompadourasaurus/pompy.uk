@@ -1,6 +1,6 @@
 import type { UnitTypeSlug } from "@/lib/quantities/unit-types"
 
-export type Unit = {
+export type UnitInput = {
   slug: string
   label: {
     singular: string
@@ -13,3 +13,6 @@ export type Unit = {
   }
   type: UnitTypeSlug
 }
+
+const isUnitSymbol = Symbol("is-unit")
+export type Unit = UnitInput & { [isUnitSymbol]: true }
