@@ -13,7 +13,10 @@ export const RecipeCoverImage = ({
 }: Props) => {
   const image = (
     <Image
-      className={cn(coverImageClassName, "shadow-sm w-full hover:shadow-lg transition-shadow duration-200")}
+      className={cn(
+        coverImageClassName,
+        "aspect-[3/2] object-cover bg-secondary rounded-lg shadow-sm w-full hover:shadow-lg transition-shadow duration-200",
+      )}
       {...coverImageProps}
     />
   )
