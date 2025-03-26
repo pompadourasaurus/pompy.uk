@@ -81,7 +81,7 @@ function NavLink({
     <Link
       href={item.href}
       className={cn(
-        "group relative flex h-8 w-full items-center rounded-lg px-2",
+        "group relative flex min-h-8 w-full items-center rounded-lg px-2",
         "after:absolute after:inset-x-0 after:inset-y-[-2px] after:rounded-lg",
         "hover:bg-accent hover:text-accent-foreground",
         pathname === item.href ? "bg-accent font-medium text-accent-foreground" : "font-normal text-foreground",
