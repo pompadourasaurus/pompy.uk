@@ -11,7 +11,7 @@ const customaryWeights = [
     label: {
       singular: "Ounce",
       plural: "Ounces",
-      symbol: "oz.",
+      symbol: " oz.",
     },
   },
   {
@@ -20,7 +20,7 @@ const customaryWeights = [
     label: {
       singular: "Pound",
       plural: "Pounds",
-      symbol: "Ib.",
+      symbol: " Ib.",
     },
   },
 ] as const satisfies UnitInput[]

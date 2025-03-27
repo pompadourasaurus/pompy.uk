@@ -13,7 +13,7 @@ const englishVolumes = [
     label: {
       singular: "Teaspoon",
       plural: "Teaspoons",
-      symbol: "tsp.",
+      symbol: " tsp.",
     },
   },
   {
@@ -22,7 +22,7 @@ const englishVolumes = [
     label: {
       singular: "Dessert spoon",
       plural: "Dessert spoons",
-      symbol: "dsp.",
+      symbol: " dsp.",
     },
   },
   {
@@ -31,7 +31,7 @@ const englishVolumes = [
     label: {
       singular: "Tablespoon",
       plural: "Tablespoons",
-      symbol: "tbsp.",
+      symbol: " tbsp.",
     },
   },
 ] as const satisfies UnitInput[]
@@ -48,7 +48,7 @@ const imperialVolumes = [
     label: {
       singular: "Fluid Ounce",
       plural: "Fluid Ounces",
-      symbol: "fl. oz.",
+      symbol: " fl. oz.",
     },
   },
   {
@@ -57,7 +57,7 @@ const imperialVolumes = [
     label: {
       singular: "Pint",
       plural: "Pints",
-      symbol: "pt.",
+      symbol: " pt.",
     },
   },
   {
@@ -66,7 +66,7 @@ const imperialVolumes = [
     label: {
       singular: "Quart",
       plural: "Quarts",
-      symbol: "qt.",
+      symbol: " qt.",
     },
   },
   {
@@ -75,7 +75,7 @@ const imperialVolumes = [
     label: {
       singular: "Gallon",
       plural: "Gallons",
-      symbol: "gal.",
+      symbol: " gal.",
     },
   },
 ] as const satisfies UnitInput[]
@@ -100,7 +100,7 @@ const customaryVolumes = [
     label: {
       singular: "Cup",
       plural: "Cups",
-      symbol: "C",
+      symbol: " C",
     },
   },
 ] as const satisfies UnitInput[]
