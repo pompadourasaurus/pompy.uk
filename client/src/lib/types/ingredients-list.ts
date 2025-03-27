@@ -6,4 +6,4 @@ type IngredientListItem = {
   detail?: string | null | undefined
 } & Quantity
 
-export type IngredientsList = IngredientListItem[]
+export type IngredientsList = readonly IngredientListItem[]
