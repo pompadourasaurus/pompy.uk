@@ -101,7 +101,7 @@ export default defineRecipe({
     <>
       <section id="preamble">
         <RecipeHeading className="mt-0">Preamble</RecipeHeading>
-        The americans have actually done something right bc these are yummy
+        The americans have actually done something right bc these are yummy even if they look like you've successfully managed to bruise and inanimate object. That's their whole appeal so just lean into the aenemic energy.
       </section>
 
       <section id="ingredients">
