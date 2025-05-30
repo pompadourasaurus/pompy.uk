@@ -2,10 +2,10 @@ import type { IngredientInput } from "@/lib/types/ingredient"
 
 export default [
   {
-    slug: "butter",
+    slug: "unsalted-butter",
     label: {
       countable: false,
-      noun: "Butter",
+      noun: "Unsalted Butter",
     },
   },
   {
