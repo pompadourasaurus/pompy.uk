@@ -15,7 +15,8 @@ export default defineRecipe({
   slug: "white-chocolate-and-raspberry-cookies",
   title: "White Chocolate and Raspberry Cookies",
   type: "bake",
-  excerpt: "The americans have actually done something right bc these are yummy even if they look like you've successfully managed to bruise and inanimate object. That's their whole appeal so just lean into the aenemic energy.",
+  excerpt:
+    "The americans have actually done something right bc these are yummy even if they look like you've successfully managed to bruise and inanimate object. That's their whole appeal so just lean into the aenemic energy.",
   date: new Date("2025-03-08"),
   coverImageProps: {
     src: "/assets/recipes/white-chocolate-and-raspberry-cookies/top-down.webp",
@@ -26,7 +27,7 @@ export default defineRecipe({
   openGraphImageUrl: "/assets/recipes/white-chocolate-and-raspberry-cookies/high-zoom-rotated.webp",
   ingredients: [
     {
-      ingredient: "butter",
+      ingredient: "unsalted-butter",
       amount: 113,
       unit: "grams",
     },
@@ -101,7 +102,8 @@ export default defineRecipe({
     <>
       <section id="preamble">
         <RecipeHeading className="mt-0">Preamble</RecipeHeading>
-        The americans have actually done something right bc these are yummy even if they look like you've successfully managed to bruise and inanimate object. That's their whole appeal so just lean into the aenemic energy.
+        The americans have actually done something right bc these are yummy even if they look like you've successfully
+        managed to bruise and inanimate object. That's their whole appeal so just lean into the aenemic energy.
       </section>
 
       <section id="ingredients">

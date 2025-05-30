@@ -2,10 +2,10 @@ import type { IngredientInput } from "@/lib/types/ingredient"
 
 export default [
   {
-    slug: "butter",
+    slug: "unsalted-butter",
     label: {
       countable: false,
-      noun: "Butter",
+      noun: "Unsalted Butter",
     },
   },
   {
@@ -87,6 +87,13 @@ export default [
     },
   },
   {
+    slug: "self-raising-flour",
+    label: {
+      countable: false,
+      noun: "Self-Raising Flour",
+    },
+  },
+  {
     slug: "white-chocolate",
     label: {
       countable: false,
@@ -94,10 +101,25 @@ export default [
     },
   },
   {
+    slug: "milk-chocolate",
+    label: {
+      countable: false,
+      noun: "Milk Chocolate",
+    },
+  },
+  {
     slug: "frozen-raspberries",
     label: {
       countable: false,
       noun: "Frozen Raspberries",
+    },
+  },
+  {
+    slug: "bananas",
+    label: {
+      countable: true,
+      singular: "Banana",
+      plural: "Bananas",
     },
   },
 ] as const satisfies IngredientInput[]
