@@ -1,4 +1,4 @@
-enimport { IngredientsList } from "@/components/recipes/ingredients-list"
+import { IngredientsList } from "@/components/recipes/ingredients-list"
 
 import { defineRecipe } from "@/lib/recipes/define-recipe"
 import { cn, fraction } from "@/lib/utils"
