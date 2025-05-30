@@ -1,9 +1,10 @@
+import bananaBreadTraybake from "@/content/recipes/banana-bread-traybake"
 import whiteChocolateAndRaspberryCookies from "@/content/recipes/white-chocolate-and-raspberry-cookies"
 
 import type { RecipeTypeSlug } from "@/lib/recipes/recipe-types"
 import type { Recipe, RecipeSlug } from "@/lib/types/recipe"
 
-const recipes = [whiteChocolateAndRaspberryCookies] satisfies Recipe[]
+const recipes = [whiteChocolateAndRaspberryCookies, bananaBreadTraybake] satisfies Recipe[]
 
 const recipesMap = new Map<string, Recipe>(recipes.map((recipe) => [recipe.slug, recipe]))
 
