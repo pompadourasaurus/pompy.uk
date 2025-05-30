@@ -1,4 +1,4 @@
-import { IngredientsList } from "@/components/recipes/ingredients-list"
+enimport { IngredientsList } from "@/components/recipes/ingredients-list"
 
 import { defineRecipe } from "@/lib/recipes/define-recipe"
 import { cn, fraction } from "@/lib/utils"
@@ -15,7 +15,7 @@ export default defineRecipe({
   slug: "white-chocolate-and-raspberry-cookies",
   title: "White Chocolate and Raspberry Cookies",
   type: "bake",
-  excerpt: "The americans have actually done something right bc these are yummy",
+  excerpt: "The americans have actually done something right bc these are yummy even if they look like you've successfully managed to bruise and inanimate object. That's their whole appeal so just lean into the aenemic energy.",
   date: new Date("2025-03-08"),
   coverImageProps: {
     src: "/assets/recipes/white-chocolate-and-raspberry-cookies/top-down.webp",
