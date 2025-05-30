@@ -12,10 +12,10 @@ function RecipeHeading({ children, className, ...props }: React.HTMLAttributes<H
 }
 
 export default defineRecipe({
-  slug: "white-chocolate-and-raspberry-cookies",
-  title: "White Chocolate and Raspberry Cookies",
+  slug: "banana-bread-traybake",
+  title: "Banana Bread Traybake",
   type: "bake",
-  excerpt: "The americans have actually done something right bc these are yummy",
+  excerpt: "My bananas are always going bad",
   date: new Date("2025-03-08"),
   coverImageProps: {
     src: "/assets/recipes/white-chocolate-and-raspberry-cookies/top-down.webp",
@@ -26,7 +26,7 @@ export default defineRecipe({
   openGraphImageUrl: "/assets/recipes/white-chocolate-and-raspberry-cookies/high-zoom-rotated.webp",
   ingredients: [
     {
-      ingredient: "butter",
+      ingredient: "unsalted-butter",
       amount: 113,
       unit: "grams",
     },
