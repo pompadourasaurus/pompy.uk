@@ -15,7 +15,7 @@ export default defineRecipe({
   slug: "white-chocolate-and-raspberry-cookies",
   title: "White Chocolate and Raspberry Cookies",
   type: "bake",
-  excerpt: "These unusual American-style cookies were really tasty 😋",
+  excerpt: "The americans have actually done something right bc these are yummy",
   date: new Date("2025-03-08"),
   coverImageProps: {
     src: "/assets/recipes/white-chocolate-and-raspberry-cookies/top-down.webp",
@@ -101,7 +101,7 @@ export default defineRecipe({
     <>
       <section id="preamble">
         <RecipeHeading className="mt-0">Preamble</RecipeHeading>
-        These unusual American-style cookies were really tasty 😋
+        The americans have actually done something right bc these are yummy
       </section>
 
       <section id="ingredients">
@@ -113,12 +113,12 @@ export default defineRecipe({
         <RecipeHeading>Method</RecipeHeading>
         <ol className="list-decimal">
           <li>Pre-heat (fan) oven to 180 degrees</li>
-          <li>Mix the butter and cream cheese in a large bowl until ...</li>
-          <li>Add the sugar, mix until ...</li>
-          <li>Introduce the egg, mix until ...</li>
-          <li>Add dry ingredients, mix well</li>
+          <li>Mix the butter and cream cheese in a large bowl</li>
+          <li>Add the sugar, mix</li>
+          <li>Introduce the egg, mix</li>
+          <li>Add dry ingredients, mix</li>
           <li>Bake for 6 minutes at 180 degrees</li>
-          <li>Wack the tray so they cringle</li>
+          <li>Wack the tray so they cringle - yes that is a technically term and not one I just made up</li>
           <li>Return tray to the oven; bake for another 7 minutes at 180 degrees</li>
         </ol>
       </section>
