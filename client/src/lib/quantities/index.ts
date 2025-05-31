@@ -79,3 +79,7 @@ export function renderQuantity(quantity: Quantity): string {
 export function isPlural(quantity: Quantity): boolean {
   return quantity.quantityType === "range" || quantity.quantityType === "special-range" || quantity.amount !== 1
 }
+
+export function isSingular(quantity: Quantity): quantity is SpecificQuantity | SpecialSpecificQuantity {
+  return !isPlural(quantity)
+}
