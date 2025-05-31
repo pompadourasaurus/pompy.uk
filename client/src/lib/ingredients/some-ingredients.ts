@@ -73,6 +73,13 @@ export default [
     },
   },
   {
+    slug: "cocoa-powder",
+    label: {
+      countable: false,
+      noun: "Cocoa Powder",
+    },
+  },
+  {
     slug: "salt",
     label: {
       countable: false,
