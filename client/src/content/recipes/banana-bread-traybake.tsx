@@ -1,4 +1,4 @@
-import { IngredientsList } from "@/components/recipes/ingredients-list"
+import { IngredientList } from "@/components/recipes/ingredient-list"
 
 import { defineRecipe } from "@/lib/recipes/define-recipe"
 import { cn, fraction } from "@/lib/utils"
@@ -78,7 +78,7 @@ export default defineRecipe({
 
       <section id="ingredients">
         <RecipeHeading>Ingredients</RecipeHeading>
-        <IngredientsList />
+        <IngredientList />
       </section>
 
       <section id="method">
