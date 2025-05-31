@@ -1,9 +1,8 @@
 "use client"
 
 import { useRecipeContext } from "@/components/recipes/recipe-context"
-import { getIndefiniteArticle } from "@/lib/indefinite-article"
 import { getKitchenwareBySlug } from "@/lib/kitchenwares"
-import { isPlural, isSingular, renderQuantity } from "@/lib/quantities"
+import { isPlural, renderQuantityUsingIndefiniteArticleForSingularAmountsFor } from "@/lib/quantities"
 import type { Kitchenware } from "@/lib/types/kitchenware"
 import type { KitchenwareList as KitchenwareListType } from "@/lib/types/kitchenware-list"
 import type { Quantity } from "@/lib/types/quantity"
@@ -15,8 +14,7 @@ function renderKitchenware(kitchenware: Kitchenware, quantity: Quantity): string
 }
 
 function renderKitchenwareAmount(kitchenware: Kitchenware, quantity: Quantity): string {
-  if (isSingular(quantity) && kitchenware.label.countable) return getIndefiniteArticle(kitchenware.label)
-  return renderQuantity(quantity)
+  return renderQuantityUsingIndefiniteArticleForSingularAmountsFor(quantity, kitchenware.label)
 }
 
 function KitchenwareListItem({ listItem }: { listItem: KitchenwareListType[number] }) {

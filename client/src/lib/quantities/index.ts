@@ -1,6 +1,9 @@
+import { getIndefiniteArticle } from "@/lib/indefinite-article"
 import { getUnitBySlug } from "@/lib/quantities/units"
 import { isNumber } from "@/lib/type-guards"
+import { Complete } from "@/lib/types/extra-utility-types"
 import type { Fraction } from "@/lib/types/fraction"
+import type { NounLabel } from "@/lib/types/noun-label"
 import type {
   Quantity,
   QuantityRange,
@@ -8,6 +11,8 @@ import type {
   SpecialSpecificQuantity,
   SpecificQuantity,
 } from "@/lib/types/quantity"
+import { optionsMerge } from "@/lib/utils"
+import { render } from "react-dom"
 
 const unicodeFractions = new Map<string, string>([
   ["1/2", "½"],
@@ -74,6 +79,15 @@ export function renderQuantity(quantity: Quantity): string {
     return renderSpecialQuantity(quantity)
 
   throw new Error(`tried to render quantity with unknown quantity type ${quantity.quantityType}`)
+}
+
+export function renderQuantityFor(quantity: Quantity, noun: NounLabel): string {
+  return renderQuantity(quantity)
+}
+
+export function renderQuantityUsingIndefiniteArticleForSingularAmountsFor(quantity: Quantity, noun: NounLabel): string {
+  if (isSingular(quantity) && noun.countable) return getIndefiniteArticle(noun)
+  return renderQuantityFor(quantity, noun)
 }
 
 export function isPlural(quantity: Quantity): boolean {
