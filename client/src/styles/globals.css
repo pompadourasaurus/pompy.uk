@@ -9,8 +9,8 @@ body {
 @layer base {
   /* shadcn/ui light-mode colours */
   :root {
-    --background: var(--brand-purple);
-    --foreground: var(--brand-purple-foreground);
+    --background: var(--brand-lilac);
+    --foreground: var(--brand-lilac-foreground);
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
@@ -19,9 +19,9 @@ body {
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
-    --muted: var(--brand-green);
+    --muted: var(--brand-purple);
     --muted-foreground: 240 3.8% 25%;
-    --accent: var(--brand-green);
+    --accent: var(--brand-purple);
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -55,9 +55,9 @@ body {
     --primary-foreground: 240 5.9% 10%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
-    --muted: var(--brand-green);
+    --muted: var(--brand-lilac);
     --muted-foreground: 240 5% 64.9%;
-    --accent: var(--brand-green);
+    --accent: var(--brand-lilac);
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -83,16 +83,16 @@ body {
 @layer base {
   /* custom light-mode colours */
   :root {
-    --brand-green: 155 28% 58%;
-    --brand-green-foreground: 240 5.9% 10%;
-    --brand-purple: 281 28% 58%;
+    --brand-lilac: 268 12% 49%;
+    --brand-lilac-foreground: 240 5.9% 10%;
+    --brand-purple: 268 34% 34%;
     --brand-purple-foreground: 240 5.9% 10%;
   }
   /* custom dark-mode colours */
   .dark {
-    --brand-green: 158 58% 26%;
-    --brand-green-foreground: 0 0% 98%;
-    --brand-purple: 290 32% 14%;
+    --brand-lilac: 268 12% 49%;
+    --brand-lilac-foreground: 0 0% 98%;
+    --brand-purple: 268 40% 15%;
     --brand-purple-foreground: 0 0% 98%;
   }
 }
