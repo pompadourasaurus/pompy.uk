@@ -98,6 +98,7 @@ export default defineRecipe({
       unit: "grams",
     },
   ],
+  kitchenware: [],
   content: () => (
     <>
       <section id="preamble">

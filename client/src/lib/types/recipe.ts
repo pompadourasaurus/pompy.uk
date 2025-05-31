@@ -3,6 +3,7 @@ import type * as React from "react"
 
 import type { RecipeTypeSlug } from "@/lib/recipes/recipe-types"
 import type { IngredientList } from "@/lib/types/ingredient-list"
+import type { KitchenwareList } from "@/lib/types/kitchenware-list"
 
 type FC = React.FC<React.HTMLAttributes<HTMLElement>>
 
@@ -18,6 +19,7 @@ export type RecipeInput = {
   coverImageProps: React.ComponentProps<typeof Image>
   openGraphImageUrl: string
   ingredients: IngredientList
+  kitchenware: KitchenwareList
   content: FC
 }
 
