@@ -19,10 +19,10 @@ export default defineRecipe({
     "The americans have actually done something right bc these are yummy even if they look like you've successfully managed to bruise and inanimate object. That's their whole appeal so just lean into the aenemic energy.",
   date: new Date("2025-03-08"),
   coverImageProps: {
-    src: "/assets/recipes/white-chocolate-and-raspberry-cookies/top-down.webp",
-    width: 619,
-    height: 821,
-    alt: "top-down photograph of a raspberry and white chocolate cookie in a baking tray",
+    src: "/assets/recipes/white-chocolate-and-raspberry-cookies/wc-cookies.jpg",
+    width: 638,
+    height: 509,
+    alt: "top-down photograph of raspberry and white chocolate cookies in a baking tray",
   },
   openGraphImageUrl: "/assets/recipes/white-chocolate-and-raspberry-cookies/high-zoom-rotated.webp",
   ingredients: [
@@ -103,7 +103,7 @@ export default defineRecipe({
       <section id="preamble">
         <RecipeHeading className="mt-0">Preamble</RecipeHeading>
         The americans have actually done something right bc these are yummy even if they look like you've successfully
-        managed to bruise and inanimate object. That's their whole appeal so just lean into the aenemic energy.
+        managed to bruise an inanimate object. That's their whole appeal so just lean into the anaemia energy.
       </section>
 
       <section id="ingredients">
@@ -116,12 +116,13 @@ export default defineRecipe({
         <ol className="list-decimal">
           <li>Pre-heat (fan) oven to 180 degrees</li>
           <li>Mix the butter and cream cheese in a large bowl</li>
-          <li>Add the sugar, mix</li>
-          <li>Introduce the egg, mix</li>
-          <li>Add dry ingredients, mix</li>
+          <li>Once combined, add the sugar and mix</li>
+          <li>Beat the egg gently then mix it in</li>
+          <li>Add dry ingredients (use a sieve if you love puppies), mix</li>
           <li>Bake for 6 minutes at 180 degrees</li>
-          <li>Wack the tray so they cringle - yes that is a technically term and not one I just made up</li>
-          <li>Return tray to the oven; bake for another 7 minutes at 180 degrees</li>
+          <li>Wack the tray so they cringle - yes that is a very real term and surely not one I just made up</li>
+          <li>Return tray to the oven to bake for another 7 minutes</li>
+          <li>Allow to cool (using a spatula to transfer off the tray is easiest)</li>
         </ol>
       </section>
     </>
