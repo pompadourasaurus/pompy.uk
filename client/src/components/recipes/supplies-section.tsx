@@ -6,7 +6,7 @@ import { RecipeHeading } from "@/components/recipes/recipe-heading"
 
 type SuppliesSectionProps = {
   headingText?: string | null | undefined
-} & Omit<React.HTMLAttributes<HTMLDivElement>, "children">
+} & Omit<React.ComponentProps<"div">, "children">
 
 export function SuppliesSection({ headingText, ...props }: SuppliesSectionProps) {
   headingText ??= "Supplies"
