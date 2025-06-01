@@ -25,10 +25,23 @@ function KitchenwareListItem({ listItem }: { listItem: KitchenwareListType[numbe
 
 export function KitchenwareList() {
   const { recipe } = useRecipeContext()
+  if (recipe.kitchenware.length === 0) return null
 
   const renderListItem = (listItem: KitchenwareListType[number], index: number) => (
     <KitchenwareListItem key={index} listItem={listItem} />
   )
 
   return <ul className="list-disc">{recipe.kitchenware.map(renderListItem)}</ul>
+}
+
+export function TitledKitchenwareList() {
+  const { recipe } = useRecipeContext()
+  if (recipe.kitchenware.length === 0) return null
+
+  return (
+    <div>
+      <strong>Kitchenware</strong>
+      <KitchenwareList />
+    </div>
+  )
 }

@@ -21,10 +21,23 @@ function IngredientListItem({ listItem }: { listItem: IngredientListType[number]
 
 export function IngredientList() {
   const { recipe } = useRecipeContext()
+  if (recipe.ingredients.length === 0) return null
 
   const renderListItem = (listItem: IngredientListType[number], index: number) => (
     <IngredientListItem key={index} listItem={listItem} />
   )
 
   return <ul className="list-disc">{recipe.ingredients.map(renderListItem)}</ul>
+}
+
+export function TitledIngredientList() {
+  const { recipe } = useRecipeContext()
+  if (recipe.ingredients.length === 0) return null
+
+  return (
+    <div>
+      <strong>Ingredients</strong>
+      <IngredientList />
+    </div>
+  )
 }
