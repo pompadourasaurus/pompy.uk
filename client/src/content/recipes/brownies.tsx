@@ -73,15 +73,18 @@ export default defineRecipe({
   content: () => (
     <>
       <RecipeSection id="preamble">
-        <RecipeHeading className="mt-0">Preamble</RecipeHeading>I know everyone claims they make the best brownies. They
-        are wrong. I do. But now you can too. So now you can brag you make the best brownies. You're so welcome. They
-        are the perfect mix of firm and gooey and have enough sugar to trigger a migraine. AKA they're perfect
+        <RecipeHeading linkHref="#preamble" className="mt-0">
+          Preamble
+        </RecipeHeading>
+        I know everyone claims they make the best brownies. They are wrong. I do. But now you can too. So now you can
+        brag you make the best brownies. You're so welcome. They are the perfect mix of firm and gooey and have enough
+        sugar to trigger a migraine. AKA they're perfect
       </RecipeSection>
 
       <SuppliesSection />
 
       <RecipeSection id="photo">
-        <RecipeHeading>What to do if your tray is too big</RecipeHeading>
+        <RecipeHeading linkHref="#photo">What to do if your tray is too big</RecipeHeading>
         <Image
           src="/assets/recipes/brownies/brownies-cropped.png"
           alt="photograph of freshly baked brownies in a square tin"
@@ -91,7 +94,7 @@ export default defineRecipe({
       </RecipeSection>
 
       <RecipeSection id="method">
-        <RecipeHeading>Method</RecipeHeading>
+        <RecipeHeading linkHref="#method">Method</RecipeHeading>
         <ol className="list-decimal">
           <li>Pre-heat (fan) oven to 180 degrees</li>
           <li>

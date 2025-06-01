@@ -65,7 +65,9 @@ export default defineRecipe({
   content: () => (
     <>
       <RecipeSection id="preamble">
-        <RecipeHeading className="mt-0">Preamble</RecipeHeading>
+        <RecipeHeading linkHref="#preamble" className="mt-0">
+          Preamble
+        </RecipeHeading>
         My bananas are always going bad and that is very cringe so make banana bread before they go gross and mouldy.
         This recipe produces 10 squares of banana bread, so I typically double the recipe and share with friends :)
       </RecipeSection>
@@ -73,7 +75,7 @@ export default defineRecipe({
       <SuppliesSection />
 
       <RecipeSection id="method">
-        <RecipeHeading>Method</RecipeHeading>
+        <RecipeHeading linkHref="#method">Method</RecipeHeading>
         <ol className="list-decimal">
           <li>Pre-heat (fan) oven to 180 degrees</li>
           <li>Mix the butter and sugar in a large bowl</li>

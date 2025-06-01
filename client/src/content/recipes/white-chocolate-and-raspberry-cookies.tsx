@@ -96,7 +96,9 @@ export default defineRecipe({
   content: () => (
     <>
       <RecipeSection id="preamble">
-        <RecipeHeading className="mt-0">Preamble</RecipeHeading>
+        <RecipeHeading linkHref="#preamble" className="mt-0">
+          Preamble
+        </RecipeHeading>
         The americans have actually done something right bc these are yummy even if they look like you've successfully
         managed to bruise an inanimate object. That's their whole appeal so just lean into the anaemia energy.
       </RecipeSection>
@@ -104,7 +106,7 @@ export default defineRecipe({
       <SuppliesSection />
 
       <RecipeSection id="method">
-        <RecipeHeading>Method</RecipeHeading>
+        <RecipeHeading linkHref="#method">Method</RecipeHeading>
         <ol className="list-decimal">
           <li>Pre-heat (fan) oven to 180 degrees</li>
           <li>Mix the butter and cream cheese in a large bowl</li>
