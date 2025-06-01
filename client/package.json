@@ -29,13 +29,12 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.8",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "autoprefixer": "^10",
     "postcss": "^8",
-    "postcss-import": "^16",
-    "tailwindcss": "^3",
+    "tailwindcss": "^4.1.8",
     "typescript": "^5"
   }
 }

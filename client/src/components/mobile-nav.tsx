@@ -75,7 +75,7 @@ const NavMenuButton = React.forwardRef<HTMLButtonElement, React.ComponentProps<t
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="!size-6"
+          className="size-6!"
         >
           <title>Toggle Nav Menu</title>
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
