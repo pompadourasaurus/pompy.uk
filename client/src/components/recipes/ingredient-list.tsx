@@ -1,5 +1,7 @@
 "use client"
 
+import type * as React from "react"
+
 import { useRecipeContext } from "@/components/recipes/recipe-context"
 import { getIngredientBySlug } from "@/lib/ingredients"
 import { isPlural, renderQuantity } from "@/lib/quantities"
@@ -30,12 +32,12 @@ export function IngredientList() {
   return <ul className="list-disc">{recipe.ingredients.map(renderListItem)}</ul>
 }
 
-export function TitledIngredientList() {
+export function TitledIngredientList(props: Omit<React.HTMLAttributes<HTMLDivElement>, "children">) {
   const { recipe } = useRecipeContext()
   if (recipe.ingredients.length === 0) return null
 
   return (
-    <div>
+    <div {...props}>
       <strong>Ingredients</strong>
       <IngredientList />
     </div>

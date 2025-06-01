@@ -1,5 +1,7 @@
 "use client"
 
+import type * as React from "react"
+
 import { useRecipeContext } from "@/components/recipes/recipe-context"
 import { getKitchenwareBySlug } from "@/lib/kitchenwares"
 import { isPlural, renderQuantityUsingIndefiniteArticleForSingularAmountsFor } from "@/lib/quantities"
@@ -34,12 +36,12 @@ export function KitchenwareList() {
   return <ul className="list-disc">{recipe.kitchenware.map(renderListItem)}</ul>
 }
 
-export function TitledKitchenwareList() {
+export function TitledKitchenwareList(props: Omit<React.HTMLAttributes<HTMLDivElement>, "children">) {
   const { recipe } = useRecipeContext()
   if (recipe.kitchenware.length === 0) return null
 
   return (
-    <div>
+    <div {...props}>
       <strong>Kitchenware</strong>
       <KitchenwareList />
     </div>
