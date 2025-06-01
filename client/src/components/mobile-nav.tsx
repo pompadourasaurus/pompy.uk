@@ -55,36 +55,32 @@ export function MobileNav({ config }: { config: RecipesNavConfig }) {
   )
 }
 
-const NavMenuButton = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(
-  ({ variant, className, ...props }, ref) => {
-    return (
-      <Button
-        ref={ref}
-        variant={variant ?? "ghost"}
-        className={cn(
-          "-ml-2 mr-2 h-8 w-8 px-0 text-base",
-          "hover:bg-transparent md:hidden",
-          "focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0",
-          className,
-        )}
-        {...props}
+function NavMenuButton({ variant, className, ...props }: React.ComponentProps<typeof Button>) {
+  return (
+    <Button
+      variant={variant ?? "ghost"}
+      className={cn(
+        "-ml-2 mr-2 h-8 w-8 px-0 text-base",
+        "hover:bg-transparent md:hidden",
+        "focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0",
+        className,
+      )}
+      {...props}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="1.5"
+        stroke="currentColor"
+        className="size-6!"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          className="size-6!"
-        >
-          <title>Toggle Nav Menu</title>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
-        </svg>
-      </Button>
-    )
-  },
-)
-NavMenuButton.displayName = "NavMenuButton"
+        <title>Toggle Nav Menu</title>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+      </svg>
+    </Button>
+  )
+}
 
 function MobileMainNavItem({
   item,
@@ -177,6 +173,6 @@ function MobileNavLink({ router, href, closeDrawer, className, children, ...prop
   )
 }
 
-function MobileNavComment({ children, ...props }: React.HTMLAttributes<HTMLSpanElement>) {
-  return <span {...props}>{children}</span>
+function MobileNavComment(props: React.ComponentProps<"span">) {
+  return <span {...props} />
 }
