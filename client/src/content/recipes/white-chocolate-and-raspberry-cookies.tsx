@@ -1,15 +1,8 @@
-import { IngredientsList } from "@/components/recipes/ingredients-list"
+import { RecipeHeading } from "@/components/recipes/recipe-heading"
 
+import { SuppliesSection } from "@/components/recipes/supplies-section"
 import { defineRecipe } from "@/lib/recipes/define-recipe"
-import { cn, fraction } from "@/lib/utils"
-
-function RecipeHeading({ children, className, ...props }: React.HTMLAttributes<HTMLHeadElement>) {
-  return (
-    <h2 className={cn("text-xl font-semibold pb-4 border-b mt-10 mb-4", className)} {...props}>
-      {children}
-    </h2>
-  )
-}
+import { fraction } from "@/lib/utils"
 
 export default defineRecipe({
   slug: "white-chocolate-and-raspberry-cookies",
@@ -98,6 +91,7 @@ export default defineRecipe({
       unit: "grams",
     },
   ],
+  kitchenware: [],
   content: () => (
     <>
       <section id="preamble">
@@ -106,10 +100,7 @@ export default defineRecipe({
         managed to bruise an inanimate object. That's their whole appeal so just lean into the anaemia energy.
       </section>
 
-      <section id="ingredients">
-        <RecipeHeading>Ingredients</RecipeHeading>
-        <IngredientsList />
-      </section>
+      <SuppliesSection />
 
       <section id="method">
         <RecipeHeading>Method</RecipeHeading>

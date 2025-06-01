@@ -1,6 +1,8 @@
+import { getIndefiniteArticle } from "@/lib/indefinite-article"
 import { getUnitBySlug } from "@/lib/quantities/units"
 import { isNumber } from "@/lib/type-guards"
 import type { Fraction } from "@/lib/types/fraction"
+import type { NounLabel } from "@/lib/types/noun-label"
 import type {
   Quantity,
   QuantityRange,
@@ -76,6 +78,19 @@ export function renderQuantity(quantity: Quantity): string {
   throw new Error(`tried to render quantity with unknown quantity type ${quantity.quantityType}`)
 }
 
+export function renderQuantityFor(quantity: Quantity, noun: NounLabel): string {
+  return renderQuantity(quantity)
+}
+
+export function renderQuantityUsingIndefiniteArticleForSingularAmountsFor(quantity: Quantity, noun: NounLabel): string {
+  if (isSingular(quantity) && noun.countable) return getIndefiniteArticle(noun)
+  return renderQuantityFor(quantity, noun)
+}
+
 export function isPlural(quantity: Quantity): boolean {
   return quantity.quantityType === "range" || quantity.quantityType === "special-range" || quantity.amount !== 1
+}
+
+export function isSingular(quantity: Quantity): quantity is SpecificQuantity | SpecialSpecificQuantity {
+  return !isPlural(quantity)
 }

@@ -1,15 +1,4 @@
-type CountableLabel = {
-  countable: true
-  singular: string
-  plural: string
-}
-
-type UncountableLabel = {
-  countable: false
-  noun: string
-}
-
-type NounLabel = CountableLabel | UncountableLabel
+import type { NounLabel } from "@/lib/types/noun-label"
 
 export type IngredientInput = {
   slug: string

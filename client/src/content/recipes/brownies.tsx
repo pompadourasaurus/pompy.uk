@@ -1,17 +1,9 @@
 import Image from "next/image"
 
-import { IngredientsList } from "@/components/recipes/ingredients-list"
+import { RecipeHeading } from "@/components/recipes/recipe-heading"
 
+import { SuppliesSection } from "@/components/recipes/supplies-section"
 import { defineRecipe } from "@/lib/recipes/define-recipe"
-import { cn } from "@/lib/utils"
-
-function RecipeHeading({ children, className, ...props }: React.HTMLAttributes<HTMLHeadElement>) {
-  return (
-    <h2 className={cn("text-xl font-semibold pb-4 border-b mt-10 mb-4", className)} {...props}>
-      {children}
-    </h2>
-  )
-}
 
 export default defineRecipe({
   slug: "brownies",
@@ -70,6 +62,13 @@ export default defineRecipe({
       unit: "grams",
     },
   ],
+  kitchenware: [
+    {
+      kitchenware: "heat-resistant-bowl",
+      amount: 1,
+      unit: "count",
+    },
+  ],
   content: () => (
     <>
       <section id="preamble">
@@ -78,10 +77,7 @@ export default defineRecipe({
         are the perfect mix of firm and gooey and have enough sugar to trigger a migraine. AKA they're perfect
       </section>
 
-      <section id="ingredients">
-        <RecipeHeading>Ingredients</RecipeHeading>
-        <IngredientsList />
-      </section>
+      <SuppliesSection />
 
       <section id="photo">
         <RecipeHeading>What to do if your tray is too big</RecipeHeading>

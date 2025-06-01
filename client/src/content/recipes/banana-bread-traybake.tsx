@@ -1,15 +1,7 @@
-import { IngredientsList } from "@/components/recipes/ingredients-list"
+import { RecipeHeading } from "@/components/recipes/recipe-heading"
 
+import { SuppliesSection } from "@/components/recipes/supplies-section"
 import { defineRecipe } from "@/lib/recipes/define-recipe"
-import { cn, fraction } from "@/lib/utils"
-
-function RecipeHeading({ children, className, ...props }: React.HTMLAttributes<HTMLHeadElement>) {
-  return (
-    <h2 className={cn("text-xl font-semibold pb-4 border-b mt-10 mb-4", className)} {...props}>
-      {children}
-    </h2>
-  )
-}
 
 export default defineRecipe({
   slug: "banana-bread-traybake",
@@ -68,6 +60,7 @@ export default defineRecipe({
       unit: "grams",
     },
   ],
+  kitchenware: [],
   content: () => (
     <>
       <section id="preamble">
@@ -76,10 +69,7 @@ export default defineRecipe({
         This recipe produces 10 squares of banana bread, so I typically double the recipe and share with friends :)
       </section>
 
-      <section id="ingredients">
-        <RecipeHeading>Ingredients</RecipeHeading>
-        <IngredientsList />
-      </section>
+      <SuppliesSection />
 
       <section id="method">
         <RecipeHeading>Method</RecipeHeading>

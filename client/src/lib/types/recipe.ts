@@ -2,7 +2,8 @@ import type Image from "next/image"
 import type * as React from "react"
 
 import type { RecipeTypeSlug } from "@/lib/recipes/recipe-types"
-import type { IngredientsList } from "@/lib/types/ingredients-list"
+import type { IngredientList } from "@/lib/types/ingredient-list"
+import type { KitchenwareList } from "@/lib/types/kitchenware-list"
 
 type FC = React.FC<React.HTMLAttributes<HTMLElement>>
 
@@ -17,7 +18,8 @@ export type RecipeInput = {
   date: Date
   coverImageProps: React.ComponentProps<typeof Image>
   openGraphImageUrl: string
-  ingredients: IngredientsList
+  ingredients: IngredientList
+  kitchenware: KitchenwareList
   content: FC
 }
 
