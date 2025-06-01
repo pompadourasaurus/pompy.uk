@@ -19,7 +19,7 @@ type RecipeHeadingProps = React.ComponentProps<"h2"> & {
 export function RecipeHeading({ linkHref, children, className, ...props }: RecipeHeadingProps) {
   return (
     <h2
-      className={cn("flex flex-row gap-2 items-center", "text-xl fo nt-semibold pb-4 border-b mt-10 mb-4", className)}
+      className={cn("flex flex-row gap-2 items-center text-xl fo nt-semibold pb-4 border-b mt-10 mb-4", className)}
       {...props}
     >
       {children}
