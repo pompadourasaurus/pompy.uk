@@ -15,8 +15,8 @@ export function SuppliesSection({ headingText, ...props }: SuppliesSectionProps)
     <RecipeSection id="supplies" {...props}>
       <RecipeHeading linkHref="#supplies">{headingText}</RecipeHeading>
       <div className="flex gap-4 flex-col md:flex-row">
-        <TitledIngredientList id="ingredients" className="flex-1" />
-        <TitledKitchenwareList id="kitchenware" className="flex-1" />
+        <TitledIngredientList id="ingredients" className="flex-1 scroll-mt-16" />
+        <TitledKitchenwareList id="kitchenware" className="flex-1 scroll-mt-16" />
       </div>
     </RecipeSection>
   )
