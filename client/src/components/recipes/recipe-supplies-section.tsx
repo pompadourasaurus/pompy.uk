@@ -1,8 +1,8 @@
 import type * as React from "react"
 
-import { TitledIngredientList } from "@/components/recipes/ingredient-list"
-import { TitledKitchenwareList } from "@/components/recipes/kitchenware-list"
 import { RecipeHeading } from "@/components/recipes/recipe-heading"
+import { TitledIngredientList } from "@/components/recipes/recipe-ingredient-list"
+import { TitledKitchenwareList } from "@/components/recipes/recipe-kitchenware-list"
 import { RecipeSection } from "@/components/recipes/recipe-section"
 
 type SuppliesSectionProps = {

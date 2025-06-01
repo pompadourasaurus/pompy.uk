@@ -1,9 +1,9 @@
 import Image from "next/image"
 
 import { RecipeHeading } from "@/components/recipes/recipe-heading"
-
 import { RecipeSection } from "@/components/recipes/recipe-section"
-import { SuppliesSection } from "@/components/recipes/supplies-section"
+import { SuppliesSection } from "@/components/recipes/recipe-supplies-section"
+
 import { defineRecipe } from "@/lib/recipes/define-recipe"
 
 export default defineRecipe({
