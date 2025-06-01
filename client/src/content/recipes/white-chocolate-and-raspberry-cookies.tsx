@@ -1,6 +1,6 @@
-import { IngredientList } from "@/components/recipes/ingredient-list"
 import { RecipeHeading } from "@/components/recipes/recipe-heading"
 
+import { SuppliesSection } from "@/components/recipes/supplies-section"
 import { defineRecipe } from "@/lib/recipes/define-recipe"
 import { fraction } from "@/lib/utils"
 
@@ -100,10 +100,7 @@ export default defineRecipe({
         managed to bruise an inanimate object. That's their whole appeal so just lean into the anaemia energy.
       </section>
 
-      <section id="ingredients">
-        <RecipeHeading>Ingredients</RecipeHeading>
-        <IngredientList />
-      </section>
+      <SuppliesSection />
 
       <section id="method">
         <RecipeHeading>Method</RecipeHeading>

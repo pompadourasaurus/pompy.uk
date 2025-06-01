@@ -1,6 +1,6 @@
-import { IngredientList } from "@/components/recipes/ingredient-list"
 import { RecipeHeading } from "@/components/recipes/recipe-heading"
 
+import { SuppliesSection } from "@/components/recipes/supplies-section"
 import { defineRecipe } from "@/lib/recipes/define-recipe"
 
 export default defineRecipe({
@@ -69,10 +69,7 @@ export default defineRecipe({
         This recipe produces 10 squares of banana bread, so I typically double the recipe and share with friends :)
       </section>
 
-      <section id="ingredients">
-        <RecipeHeading>Ingredients</RecipeHeading>
-        <IngredientList />
-      </section>
+      <SuppliesSection />
 
       <section id="method">
         <RecipeHeading>Method</RecipeHeading>
