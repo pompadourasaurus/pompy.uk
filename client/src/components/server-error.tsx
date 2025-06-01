@@ -16,7 +16,7 @@ function ServerErrorCodeSection({ statusCode, className, ...props }: ServerError
   )
   return (
     <section className={sectionClassName} {...props}>
-      <h1 className="font-[family-name:var(--font-jetbrains-mono)] font-medium">{statusCode}</h1>
+      <h1 className="font-(family-name:--font-jetbrains-mono) font-medium">{statusCode}</h1>
     </section>
   )
 }
@@ -28,7 +28,7 @@ type ServerErrorMessageSectionProps = {
 function ServerErrorMessageSection({ message, className, ...props }: ServerErrorMessageSectionProps) {
   return (
     <section className={cn(className, "content-center inline-block text-2xl")} {...props}>
-      <h2 className="font-[family-name:var(--font-onest)] font-normal">{message}.</h2>
+      <h2 className="font-(family-name:--font-onest) font-normal">{message}.</h2>
     </section>
   )
 }
