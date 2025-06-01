@@ -1,15 +1,8 @@
 import { IngredientList } from "@/components/recipes/ingredient-list"
+import { RecipeHeading } from "@/components/recipes/recipe-heading"
 
 import { defineRecipe } from "@/lib/recipes/define-recipe"
-import { cn, fraction } from "@/lib/utils"
-
-function RecipeHeading({ children, className, ...props }: React.HTMLAttributes<HTMLHeadElement>) {
-  return (
-    <h2 className={cn("text-xl font-semibold pb-4 border-b mt-10 mb-4", className)} {...props}>
-      {children}
-    </h2>
-  )
-}
+import { fraction } from "@/lib/utils"
 
 export default defineRecipe({
   slug: "white-chocolate-and-raspberry-cookies",
