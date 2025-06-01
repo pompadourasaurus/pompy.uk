@@ -1,7 +1,6 @@
 import { getIndefiniteArticle } from "@/lib/indefinite-article"
 import { getUnitBySlug } from "@/lib/quantities/units"
 import { isNumber } from "@/lib/type-guards"
-import { Complete } from "@/lib/types/extra-utility-types"
 import type { Fraction } from "@/lib/types/fraction"
 import type { NounLabel } from "@/lib/types/noun-label"
 import type {
@@ -11,8 +10,6 @@ import type {
   SpecialSpecificQuantity,
   SpecificQuantity,
 } from "@/lib/types/quantity"
-import { optionsMerge } from "@/lib/utils"
-import { render } from "react-dom"
 
 const unicodeFractions = new Map<string, string>([
   ["1/2", "½"],
