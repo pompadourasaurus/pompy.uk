@@ -2,6 +2,7 @@ import Image from "next/image"
 
 import { RecipeHeading } from "@/components/recipes/recipe-heading"
 
+import { RecipeSection } from "@/components/recipes/recipe-section"
 import { SuppliesSection } from "@/components/recipes/supplies-section"
 import { defineRecipe } from "@/lib/recipes/define-recipe"
 
@@ -71,15 +72,15 @@ export default defineRecipe({
   ],
   content: () => (
     <>
-      <section id="preamble">
+      <RecipeSection id="preamble">
         <RecipeHeading className="mt-0">Preamble</RecipeHeading>I know everyone claims they make the best brownies. They
         are wrong. I do. But now you can too. So now you can brag you make the best brownies. You're so welcome. They
         are the perfect mix of firm and gooey and have enough sugar to trigger a migraine. AKA they're perfect
-      </section>
+      </RecipeSection>
 
       <SuppliesSection />
 
-      <section id="photo">
+      <RecipeSection id="photo">
         <RecipeHeading>What to do if your tray is too big</RecipeHeading>
         <Image
           src="/assets/recipes/brownies/brownies-cropped.png"
@@ -87,9 +88,9 @@ export default defineRecipe({
           width={1070}
           height={985}
         />
-      </section>
+      </RecipeSection>
 
-      <section id="method">
+      <RecipeSection id="method">
         <RecipeHeading>Method</RecipeHeading>
         <ol className="list-decimal">
           <li>Pre-heat (fan) oven to 180 degrees</li>
@@ -108,7 +109,7 @@ export default defineRecipe({
           <li>ALLOW TO COOL in tray for 20 minutes (I promise they're worth the wait, this is where they firm up)</li>
           <li>Profit</li>
         </ol>
-      </section>
+      </RecipeSection>
     </>
   ),
 })

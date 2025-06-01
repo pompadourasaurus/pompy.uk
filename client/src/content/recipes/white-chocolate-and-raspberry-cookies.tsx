@@ -1,5 +1,6 @@
 import { RecipeHeading } from "@/components/recipes/recipe-heading"
 
+import { RecipeSection } from "@/components/recipes/recipe-section"
 import { SuppliesSection } from "@/components/recipes/supplies-section"
 import { defineRecipe } from "@/lib/recipes/define-recipe"
 import { fraction } from "@/lib/utils"
@@ -94,15 +95,15 @@ export default defineRecipe({
   kitchenware: [],
   content: () => (
     <>
-      <section id="preamble">
+      <RecipeSection id="preamble">
         <RecipeHeading className="mt-0">Preamble</RecipeHeading>
         The americans have actually done something right bc these are yummy even if they look like you've successfully
         managed to bruise an inanimate object. That's their whole appeal so just lean into the anaemia energy.
-      </section>
+      </RecipeSection>
 
       <SuppliesSection />
 
-      <section id="method">
+      <RecipeSection id="method">
         <RecipeHeading>Method</RecipeHeading>
         <ol className="list-decimal">
           <li>Pre-heat (fan) oven to 180 degrees</li>
@@ -115,7 +116,7 @@ export default defineRecipe({
           <li>Return tray to the oven to bake for another 7 minutes</li>
           <li>Allow to cool (using a spatula to transfer off the tray is easiest)</li>
         </ol>
-      </section>
+      </RecipeSection>
     </>
   ),
 })
