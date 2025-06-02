@@ -5,6 +5,7 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 //region Spec types
 export type LinkTreeNodeSpec = {
@@ -102,7 +103,7 @@ function LinkTreeNode({ nodeSpec }: LinkTreeNodeProps) {
   const { activeItemHref } = useLinkTree()
 
   return (
-    <a
+    <Link
       href={nodeSpec.href}
       className={cn(
         "inline-block no-underline transition-colors hover:text-foreground",
@@ -110,7 +111,7 @@ function LinkTreeNode({ nodeSpec }: LinkTreeNodeProps) {
       )}
     >
       {nodeSpec.title}
-    </a>
+    </Link>
   )
 }
 //endregion
