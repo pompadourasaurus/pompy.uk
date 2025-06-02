@@ -1,3 +1,5 @@
+import type { UnknownObject } from "@/lib/types/extra-utility-types"
+
 export function isNumber(value: unknown): value is number | number {
   return typeof value === "number" || value instanceof Number
 }
@@ -10,7 +12,7 @@ export function isBoolean(value: unknown): value is boolean | boolean {
   return typeof value === "boolean" || value instanceof Boolean
 }
 
-export function isObject(value: unknown): value is Record<string, unknown> {
+export function isObject(value: unknown): value is UnknownObject {
   if (!value) return false
   if (typeof value !== "object") return false
   const valuePrototype = Object.getPrototypeOf(value)
