@@ -2,7 +2,10 @@
 // Copyright (c) 2024 Alexandre Marques
 // Alexandre Marques licenses zod-config to Lordfirespeed under the terms of the MIT license
 
-type Mergeable = Partial<Record<string, unknown>>
+import { isObject } from "@/lib/type-guards"
+import type { StringRecord } from "@/lib/types/extra-utility-types"
+
+type Mergeable = StringRecord<unknown>
 
 export function deepMerge<T extends {}, U extends Mergeable>(target: T, source: U): T & U
 export function deepMerge<T extends {}, U extends Mergeable, V extends Mergeable>(
@@ -16,10 +19,7 @@ export function deepMerge<T extends {}, U extends Mergeable, V extends Mergeable
   source2: V,
   source3: W,
 ): T & U & V & W
-export function deepMerge(
-  target: Partial<Record<string, unknown>>,
-  ...sources: unknown[]
-): Partial<Record<string, unknown>> {
+export function deepMerge(target: Mergeable, ...sources: Mergeable[]): Mergeable {
   if (!sources.length) {
     return target
   }
@@ -54,11 +54,6 @@ export function deepMerge(
 }
 
 export function isMergeableObject(item: unknown): item is Mergeable {
-  if (!item) return false
-  if (typeof item !== "object") return false
-  // ES6 class instances, Maps, Sets, Arrays, etc. should not be considered records
-  if (Object.getPrototypeOf(item) === Object.prototype) return true
-  // Some library/Node.js functions return records with null prototype
-  if (Object.getPrototypeOf(item) === null) return true
-  return false
+  if (!isObject(item)) return false
+  return true
 }
