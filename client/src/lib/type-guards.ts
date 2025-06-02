@@ -1,14 +1,14 @@
 import type { UnknownObject } from "@/lib/types/extra-utility-types"
 
-export function isNumber(value: unknown): value is number | number {
+export function isNumber(value: unknown): value is number {
   return typeof value === "number" || value instanceof Number
 }
 
-export function isString(value: unknown): value is string | string {
+export function isString(value: unknown): value is string {
   return typeof value === "string" || value instanceof String
 }
 
-export function isBoolean(value: unknown): value is boolean | boolean {
+export function isBoolean(value: unknown): value is boolean {
   return typeof value === "boolean" || value instanceof Boolean
 }
 
