@@ -1,5 +1,6 @@
 export type RecipeType = {
   slug: string
+  description: string
   label: {
     singular: string
     plural: string
@@ -9,6 +10,7 @@ export type RecipeType = {
 const recipeTypes = [
   {
     slug: "cake",
+    description: "encompasses baked goods served whole and sliced: particularly decorated and/or layered cakes.",
     label: {
       singular: "Cake",
       plural: "Cakes",
@@ -16,6 +18,7 @@ const recipeTypes = [
   },
   {
     slug: "bake",
+    description: "encompasses baked goods served pre-portioned: tray-bakes, cookies, pastries, etc.",
     label: {
       singular: "Bake",
       plural: "Bakes",
@@ -23,6 +26,7 @@ const recipeTypes = [
   },
   {
     slug: "meal",
+    description: "encompasses conventional meals - breakfast, lunch, dinner.",
     label: {
       singular: "Meal",
       plural: "Meals",
