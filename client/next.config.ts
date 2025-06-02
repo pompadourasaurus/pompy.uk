@@ -1,6 +1,7 @@
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["www.pompy-dev.uk"],
   async redirects() {
     return [
       {
