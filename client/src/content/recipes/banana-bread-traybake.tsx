@@ -1,6 +1,7 @@
 import { RecipeHeading } from "@/components/recipes/recipe-heading"
+import { RecipeSection } from "@/components/recipes/recipe-section"
+import { SuppliesSection } from "@/components/recipes/recipe-supplies-section"
 
-import { SuppliesSection } from "@/components/recipes/supplies-section"
 import { defineRecipe } from "@/lib/recipes/define-recipe"
 
 export default defineRecipe({
@@ -63,16 +64,18 @@ export default defineRecipe({
   kitchenware: [],
   content: () => (
     <>
-      <section id="preamble">
-        <RecipeHeading className="mt-0">Preamble</RecipeHeading>
+      <RecipeSection id="preamble">
+        <RecipeHeading linkHref="#preamble" className="mt-0">
+          Preamble
+        </RecipeHeading>
         My bananas are always going bad and that is very cringe so make banana bread before they go gross and mouldy.
         This recipe produces 10 squares of banana bread, so I typically double the recipe and share with friends :)
-      </section>
+      </RecipeSection>
 
       <SuppliesSection />
 
-      <section id="method">
-        <RecipeHeading>Method</RecipeHeading>
+      <RecipeSection id="method">
+        <RecipeHeading linkHref="#method">Method</RecipeHeading>
         <ol className="list-decimal">
           <li>Pre-heat (fan) oven to 180 degrees</li>
           <li>Mix the butter and sugar in a large bowl</li>
@@ -90,7 +93,7 @@ export default defineRecipe({
           <li>Spoon the melted chocolate over the banana bread, using a large spoon to smooth</li>
           <li>Wait to cool, then use bread knife to section</li>
         </ol>
-      </section>
+      </RecipeSection>
     </>
   ),
 })

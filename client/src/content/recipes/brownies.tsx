@@ -1,8 +1,9 @@
 import Image from "next/image"
 
 import { RecipeHeading } from "@/components/recipes/recipe-heading"
+import { RecipeSection } from "@/components/recipes/recipe-section"
+import { SuppliesSection } from "@/components/recipes/recipe-supplies-section"
 
-import { SuppliesSection } from "@/components/recipes/supplies-section"
 import { defineRecipe } from "@/lib/recipes/define-recipe"
 
 export default defineRecipe({
@@ -71,26 +72,29 @@ export default defineRecipe({
   ],
   content: () => (
     <>
-      <section id="preamble">
-        <RecipeHeading className="mt-0">Preamble</RecipeHeading>I know everyone claims they make the best brownies. They
-        are wrong. I do. But now you can too. So now you can brag you make the best brownies. You're so welcome. They
-        are the perfect mix of firm and gooey and have enough sugar to trigger a migraine. AKA they're perfect
-      </section>
+      <RecipeSection id="preamble">
+        <RecipeHeading linkHref="#preamble" className="mt-0">
+          Preamble
+        </RecipeHeading>
+        I know everyone claims they make the best brownies. They are wrong. I do. But now you can too. So now you can
+        brag you make the best brownies. You're so welcome. They are the perfect mix of firm and gooey and have enough
+        sugar to trigger a migraine. AKA they're perfect
+      </RecipeSection>
 
       <SuppliesSection />
 
-      <section id="photo">
-        <RecipeHeading>What to do if your tray is too big</RecipeHeading>
+      <RecipeSection id="photo">
+        <RecipeHeading linkHref="#photo">What to do if your tray is too big</RecipeHeading>
         <Image
           src="/assets/recipes/brownies/brownies-cropped.png"
           alt="photograph of freshly baked brownies in a square tin"
           width={1070}
           height={985}
         />
-      </section>
+      </RecipeSection>
 
-      <section id="method">
-        <RecipeHeading>Method</RecipeHeading>
+      <RecipeSection id="method">
+        <RecipeHeading linkHref="#method">Method</RecipeHeading>
         <ol className="list-decimal">
           <li>Pre-heat (fan) oven to 180 degrees</li>
           <li>
@@ -108,7 +112,7 @@ export default defineRecipe({
           <li>ALLOW TO COOL in tray for 20 minutes (I promise they're worth the wait, this is where they firm up)</li>
           <li>Profit</li>
         </ol>
-      </section>
+      </RecipeSection>
     </>
   ),
 })

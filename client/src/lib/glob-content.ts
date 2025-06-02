@@ -29,3 +29,13 @@ export async function globContent(contentSubdirectoryName: string): Promise<stri
   }
   return moduleBaseNames
 }
+
+export type Module = { [P in string]?: unknown } & { default: unknown }
+
+export async function unpackModules<T>(
+  modules: Module[],
+  unpackModule: (module: Module) => T[] | Promise<T[]>,
+): Promise<T[]> {
+  const contentsOfEachModule = await Promise.all(modules.map(unpackModule))
+  return contentsOfEachModule.flat()
+}
