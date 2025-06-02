@@ -11,6 +11,8 @@ const recipeModules: Module[] = await Promise.all(recipeModuleNames.map((name) =
 const recipes = await unpackModules<Recipe>(recipeModules, (module) => {
   if (module.default == null) return []
   if (!isObject(module.default)) return []
+  if (!Object.hasOwn(module.default, "slug")) return []
+  if (!Object.hasOwn(module.default, "type")) return []
   return [module.default as Recipe]
 })
 const recipesMap = new Map<string, Recipe>(recipes.map((recipe) => [recipe.slug, recipe]))
