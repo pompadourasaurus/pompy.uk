@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
         destination: "/recipes",
         permanent: false,
       },
+      {
+        source: "/onlyfans",
+        destination: "https://beyondthestreets.org.uk/donate/",
+        permanent: false,
+        basePath: false,
+      },
     ]
   },
 }
