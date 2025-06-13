@@ -30,3 +30,14 @@ export type Incomplete<T> = {
 export type Complete<T> = {
   [P in keyof T]-?: NonNullable<T[P]>
 }
+
+/**
+ * An object whose set of properties and their types is unknown
+ */
+// biome-ignore lint/suspicious/noExplicitAny:
+export type UnknownObject = { [P in keyof any]?: unknown }
+
+/**
+ * Construct a type with unknown properties of type T
+ */
+export type StringRecord<T> = UnknownObject & { [P in string]?: Nullable<T> }
